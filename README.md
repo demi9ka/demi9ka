@@ -2,7 +2,6 @@
     <h1>👋Привет, я Демид</h1>
     <h3>Frontend Developer</h3>
 </div>
-
 <h3>🤝Контакты</h3>
 <div id="link">
     <a href="https://t.me/Demi9ka"><img width="35px" src="https://cdn.simpleicons.org/telegram"/></a>
@@ -22,6 +21,12 @@
 <img width="30px" src="https://cdn.simpleicons.org/tailwindcss">
 <img width="30px" src="https://cdn.simpleicons.org/webpack">
 <img width="30px" src="https://cdn.simpleicons.org/vite">
+<img width="30px" src="https://cdn.simpleicons.org/nodedotjs">
+
+<img width="30px" src="https://cdn.simpleicons.org/python">
+<img width="30px" src="https://cdn.simpleicons.org/flask">
+<img width="30px" src="https://cdn.simpleicons.org/postgresql">
+
 </div>
 
 <h3>🔧 Инструменты</h3>
