@@ -22,7 +22,7 @@
 <img width="30px" src="https://cdn.simpleicons.org/webpack">
 <img width="30px" src="https://cdn.simpleicons.org/vite">
 <img width="30px" src="https://cdn.simpleicons.org/nodedotjs">
-
+<br>
 <img width="30px" src="https://cdn.simpleicons.org/python">
 <img width="30px" src="https://cdn.simpleicons.org/flask">
 <img width="30px" src="https://cdn.simpleicons.org/postgresql">
