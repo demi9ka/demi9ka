@@ -5,7 +5,7 @@
 <h3>🤝Контакты</h3>
 <div id="link">
     <a href="https://t.me/dintel1"><img width="35px" src="https://cdn.simpleicons.org/telegram"/></a>
-    <a href="https://discordapp.com/users/812542562321039360/"><img width="35px" src="https://cdn.simpleicons.org/discord"/></a>
+<!--     <a href="https://discordapp.com/users/812542562321039360/"><img width="35px" src="https://cdn.simpleicons.org/discord"/></a> -->
     <a href="https://vk.com/demi9ka"><img width="35px" src="https://cdn.simpleicons.org/vk"/></a>
 </div>
 
