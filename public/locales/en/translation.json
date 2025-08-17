@@ -1,0 +1,16 @@
+{
+  "head": {
+    "title": "Resume",
+    "description": "Frontend enginer resume"
+  },
+  "home": {
+    "profile": {
+      "name": "DEMID VETOSHKIN"
+    }
+  },
+  "header": {
+    "main": "Main",
+    "skills": "Skills",
+    "portfolio": "Portfolio"
+  }
+}

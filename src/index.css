@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  user-select: none;
+}
+a {
+  text-decoration: none; /* Убираем подчёркивание */
+  color: inherit; /* Наследуем цвет текста */
+}
+
+a:visited {
+  color: inherit; /* Цвет посещённых ссылок как у обычного текста */
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none; /* Убираем подчёркивание при взаимодействии */
+  color: inherit; /* Сохраняем цвет */
+}
