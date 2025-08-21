@@ -5,11 +5,15 @@ import { scrollPositionStore } from '@/store/scroll-postoion-store'
 
 export const ScrollProgress = observer(() => {
   const { scrollPosition } = scrollPositionStore
+  const progress = (scrollPosition.y / window.innerHeight) * 100
+  console.log(scrollPosition.y, window.innerHeight, window.outerHeight, document.documentElement.clientHeight)
+  console.log(progress)
+
   return (
     <Box
       className={css.wrapper}
       style={{
-        width: `${scrollPosition.y}%`,
+        width: `${progress}%`,
       }}
     />
   )

@@ -10,12 +10,13 @@
   z-index: 3;
   transition: 0.2s;
   overflow: hidden;
+  border: 1px solid var(--mantine-color-dark-7);
   border-bottom: 1px solid var(--mantine-color-dark-4);
 }
 .wrapper.islandHeader {
   margin: 6px;
   width: calc(100vw - 12px);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 12px;
   border: 1px solid var(--mantine-color-dark-4);
 }

@@ -1,8 +1,8 @@
 import { AnimatedComponent } from '@/shared/ui/animated-component'
-import { Flex, Title, Box, Text } from '@mantine/core'
-
+import { Flex, Title, Box, Text, Blockquote } from '@mantine/core'
 import { Trans, useTranslation } from 'react-i18next'
 import { Image } from '@/shared/ui/image'
+import { CodeIcon } from 'lucide-react'
 
 export const Profile = () => {
   const { t } = useTranslation()
@@ -16,10 +16,10 @@ export const Profile = () => {
       }}
       align={{
         base: 'center',
-        sm: 'start',
+        sm: 'end',
       }}
     >
-      <Box mt={{ base: 32, sm: 0 }}>
+      <Box>
         <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.2} once={false} value={20}>
           <Flex
             gap={8}
@@ -34,24 +34,26 @@ export const Profile = () => {
             </Title>
           </Flex>
         </AnimatedComponent>
-        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.4} once={false} value={10}>
-          <Title ta={{ base: 'center', sm: 'left' }} order={3}>
+        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.3} once={false} value={10}>
+          <Title ta={{ base: 'center', sm: 'left' }} mb={32} order={3}>
             {t('home.profile.post')}
           </Title>
         </AnimatedComponent>
-        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.6} once={false} value={10}>
-          <Text ta={{ base: 'justify', sm: 'left' }} mt={16} mx={{ base: 'md', sm: 0 }}>
-            <Trans
-              i18nKey={'home.profile.info'}
-              components={{
-                span: <span style={{ color: 'var(--mantine-color-violet-3)' }} />,
-              }}
-            />
-          </Text>
+        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.4} once={false} value={10}>
+          <Blockquote h={{ base: 'auto', sm: 256 }} color="violet.4" icon={<CodeIcon />} mt={16}>
+            <Text ta={'left'}>
+              <Trans
+                i18nKey={'home.profile.info'}
+                components={{
+                  span: <span style={{ color: 'var(--mantine-color-violet-3)' }} />,
+                }}
+              />
+            </Text>
+          </Blockquote>
         </AnimatedComponent>
       </Box>
-      <AnimatedComponent animationType="slideUp" duration={2} delay={0.8} once={false} value={10}>
-        <Image mt={{ base: 0, sm: 64 }} w={256} h={256} src={'/avatar.webp'} />
+      <AnimatedComponent animationType="slideUp" duration={2} delay={0.4} once={false} value={10}>
+        <Image style={{ pointerEvents: 'none' }} w={256} h={256} src={'/avatar.webp'} />
       </AnimatedComponent>
     </Flex>
   )
