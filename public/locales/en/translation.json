@@ -5,7 +5,9 @@
   },
   "home": {
     "profile": {
-      "name": "DEMID VETOSHKIN"
+      "name": "DEMID VETOSHKIN",
+      "post": "Frontend developer",
+      "info": "With dozens of web development projects under my belt — from <span>Telegram Mini Apps</span> to <span>complex admin dashboards</span> and <span>sales funnels for info-business</span> — I bring meticulous attention to detail as a frontend developer. Every aspect matters to me, from system architecture design and requirements analysis to component implementation and performance optimization."
     }
   },
   "header": {

@@ -1,35 +1,16 @@
 import { Box } from '@mantine/core'
-import { useState, useEffect } from 'react'
 import css from './scroll-progress.module.css'
+import { observer } from 'mobx-react-lite'
+import { scrollPositionStore } from '@/store/scroll-postoion-store'
 
-export const ScrollProgress = () => {
-  const [scrollProgress, setScrollProgress] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = document.documentElement.scrollTop
-      const windowHeight = document.documentElement.clientHeight
-      const docHeight = document.documentElement.scrollHeight
-
-      const progress = (scrollTop / (docHeight - windowHeight)) * 100
-      setScrollProgress(progress)
-    }
-
-    handleScroll()
-
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
+export const ScrollProgress = observer(() => {
+  const { scrollPosition } = scrollPositionStore
   return (
     <Box
-      bg={'violet'}
       className={css.wrapper}
       style={{
-        width: `${scrollProgress}%`,
+        width: `${scrollPosition.y}%`,
       }}
     />
   )
-}
+})

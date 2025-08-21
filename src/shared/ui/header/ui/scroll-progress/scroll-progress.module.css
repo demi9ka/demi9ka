@@ -1,8 +1,9 @@
 .wrapper {
   position: absolute;
   left: 0;
-  bottom: 0;
-  height: 2px;
-  z-index: 1;
+  top: 0;
+  height: 100%;
+  z-index: -1;
   transition: width 0.1s ease-out;
+  background-color: var(--mantine-color-dark-6);
 }
