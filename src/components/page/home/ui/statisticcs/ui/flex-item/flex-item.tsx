@@ -7,11 +7,9 @@ type Props = {
 
 export const FlexItem = ({ title, subTitle }: Props) => {
   return (
-    <Flex direction={'column'} gap={{ base: 4, sm: 'xs' }} justify={'center'} align={'center '}>
+    <Flex direction={'column'} gap={{ base: 4, sm: 2 }} justify={'center'} align={'center'}>
       <Title order={3}>{title}</Title>
-      <Text fz={{ base: 'xs', sm: 'md' }} ta={'center'}>
-        {subTitle}
-      </Text>
+      <Text fz={{ base: 'xs', sm: 'md' }}>{subTitle}</Text>
     </Flex>
   )
 }

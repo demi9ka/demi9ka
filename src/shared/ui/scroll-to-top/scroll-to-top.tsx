@@ -7,7 +7,7 @@ export const ScrollToTop = observer(() => {
   const { goToTop, scrollPosition } = scrollPositionStore
 
   return (
-    <ActionIcon size={'lg'} pos={'fixed'} style={{ transition: '.2s ease-in-out' }} bottom={20} right={scrollPosition.y > 10 ? 20 : -60} onClick={goToTop}>
+    <ActionIcon size={'lg'} pos={'fixed'} style={{ transition: '.2s ease-in-out' }} bottom={20} right={scrollPosition.y > 10 ? 20 : -60} onClick={goToTop} bg={'violet.5'}>
       <ArrowUp />
     </ActionIcon>
   )
