@@ -20,25 +20,23 @@ export const Profile = () => {
       }}
     >
       <Box>
-        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.2} once={false} value={20}>
-          <Flex
-            gap={8}
-            justify={{
-              base: 'center',
-              sm: 'start',
-            }}
-            align={'center'}
-          >
-            <Title mb={'xl'} order={2}>
-              {t('home.profile.name')}
-            </Title>
-          </Flex>
-        </AnimatedComponent>
-        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.3} once={false} value={10}>
-          <Title ta={{ base: 'center', sm: 'left' }} mb={32} order={3}>
-            {t('home.profile.post')}
+        <Flex
+          gap={8}
+          justify={{
+            base: 'center',
+            sm: 'start',
+          }}
+          align={'center'}
+        >
+          <Title mb={'xl'} order={2}>
+            {t('home.profile.name')}
           </Title>
-        </AnimatedComponent>
+        </Flex>
+
+        <Title ta={{ base: 'center', sm: 'left' }} mb={32} order={3}>
+          {t('home.profile.post')}
+        </Title>
+
         <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.4} once={false} value={10}>
           <Blockquote h={{ base: 'auto', sm: 256 }} color="violet.4" icon={<CodeIcon />} mt={16}>
             <Text ta={'left'}>

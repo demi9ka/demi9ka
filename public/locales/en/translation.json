@@ -15,6 +15,14 @@
       "completed-projects": "Completed projects",
       "years-work_one": "Year work",
       "years-work_other": "Years work"
+    },
+    "skills": {
+      "title": "Skills",
+      "tabs": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "other": "Other"
+      }
     }
   },
   "header": {

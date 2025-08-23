@@ -17,6 +17,14 @@
       "years-work_one": "Год работы",
       "years-work_few": "Года работы",
       "years-work_many": "Лет работы"
+    },
+    "skills": {
+      "title": "Навыки",
+      "tabs": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "other": "Прочее"
+      }
     }
   },
   "header": {
