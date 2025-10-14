@@ -33,9 +33,12 @@
       "click-to-open": "Open full"
     }
   },
-  "header": {
+  "footer": {
+    "title": "Navigation",
     "main": "Main",
     "skills": "Skills",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "copyrigth": "Demid. All rights reserved."
   }
 }

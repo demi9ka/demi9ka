@@ -7,7 +7,7 @@ import { Card } from './ui/card'
 export const Portfolio = () => {
   const { t } = useTranslation()
 
-  const mappedData = DATA.map((el, i) => <Card key={i} {...el} delay={(i + 1) / 10} />)
+  const mappedData = DATA.map((el, i) => <Card key={i} {...el} />)
   return (
     <>
       <SectionTitle title={t('home.portfolio.title')} />

@@ -5,12 +5,12 @@ import { router } from './routing'
 import '@/feature/locale'
 
 const theme = createTheme({
-  primaryColor: 'violet',
+  primaryColor: 'violet'
 })
 
 export const App = () => {
   return (
-    <MantineProvider defaultColorScheme="dark" theme={theme}>
+    <MantineProvider defaultColorScheme='dark' theme={theme}>
       <RouterProvider router={router} />
     </MantineProvider>
   )
