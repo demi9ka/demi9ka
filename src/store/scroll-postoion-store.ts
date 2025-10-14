@@ -27,7 +27,6 @@ class ScrollPositionStore {
   }
   setViewportRef = (viewport: RefObject<HTMLDivElement | null>) => {
     this.viewportRef = viewport
-    console.log(viewport)
   }
 }
 

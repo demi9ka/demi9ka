@@ -9,7 +9,9 @@ export const FlexItem = ({ title, subTitle }: Props) => {
   return (
     <Flex direction={'column'} gap={{ base: 4, sm: 2 }} justify={'center'} align={'center'}>
       <Title order={3}>{title}</Title>
-      <Text fz={{ base: 'xs', sm: 'md' }}>{subTitle}</Text>
+      <Text ta={{ base: 'center', sm: 'left' }} fz={{ base: 'xs', sm: 'md' }}>
+        {subTitle}
+      </Text>
     </Flex>
   )
 }

@@ -2,7 +2,7 @@ import { CodeIcon } from 'lucide-react'
 import css from './header.module.css'
 import { ActionIcon, Box, Flex } from '@mantine/core'
 import { LanguageSelect } from './ui/language-select'
-import { ScrollProgress } from './ui/scroll-progress'
+// import { ScrollProgress } from './ui/scroll-progress'
 import { AnimatedComponent } from '../animated-component'
 import { observer } from 'mobx-react-lite'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
@@ -31,7 +31,7 @@ export const Header = observer(() => {
         </AnimatedComponent>
         <LanguageSelect />
       </Flex>
-      <ScrollProgress />
+      {/* <ScrollProgress /> */}
     </Box>
   )
 })

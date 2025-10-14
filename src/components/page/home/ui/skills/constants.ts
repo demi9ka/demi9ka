@@ -1,5 +1,6 @@
 import {
   SiElectron,
+  SiEslint,
   SiExpress,
   SiGit,
   SiHtml5,
@@ -8,17 +9,29 @@ import {
   SiMysql,
   SiNodedotjs,
   SiPostgresql,
+  SiPrettier,
   SiPrisma,
   SiPython,
   SiReact,
   SiReactquery,
   SiSass,
+  SiStorybook,
   SiTailwindcss,
   SiTelegram,
   SiTypescript,
   SiVercel,
   SiVite,
+  SiZod,
+  SiNextdotjs,
   type IconType,
+  SiNestjs,
+  SiBitcoin,
+  SiPaytmHex,
+  SiPackagist,
+  SiCoda,
+  SiBlack,
+  SiMantine,
+  SiShadcnui
 } from '@icons-pack/react-simple-icons'
 
 export type SkillItemType = { text: string; icon: IconType }
@@ -27,95 +40,96 @@ export type SkillsType = Record<'frontend' | 'backend' | 'other', SkillItemType[
 export const SKILLS: SkillsType = {
   frontend: [
     {
-      text: 'HTML5',
-      icon: SiHtml5,
-    },
-
-    {
-      text: 'Sass',
-      icon: SiSass,
-    },
-    {
       text: 'Typescript',
-      icon: SiTypescript,
+      icon: SiTypescript
     },
     {
       text: 'React',
-      icon: SiReact,
+      icon: SiReact
     },
     {
-      text: 'React native',
-      icon: SiReact,
+      text: 'Next.js',
+      icon: SiNextdotjs
     },
+
     {
       text: 'React query',
-      icon: SiReactquery,
+      icon: SiReactquery
+    },
+    {
+      text: 'Zod',
+      icon: SiZod
     },
 
     {
       text: 'Mobx',
-      icon: SiMobx,
+      icon: SiMobx
+    },
+    {
+      text: 'ShadCn',
+      icon: SiShadcnui
     },
     {
       text: 'Tailwind',
-      icon: SiTailwindcss,
+      icon: SiTailwindcss
     },
     {
-      text: 'Vite',
-      icon: SiVite,
+      text: 'Sass',
+      icon: SiSass
     },
+    {
+      text: 'Mantine',
+      icon: SiMantine
+    }
   ],
   backend: [
     {
-      text: 'Node js',
-      icon: SiNodedotjs,
+      text: 'Nest.js',
+      icon: SiNestjs
     },
     {
       text: 'Express',
-      icon: SiExpress,
+      icon: SiExpress
     },
     {
       text: 'Prisma',
-      icon: SiPrisma,
+      icon: SiPrisma
     },
     {
       text: 'Postgresql',
-      icon: SiPostgresql,
+      icon: SiPostgresql
     },
     {
       text: 'Mysql',
-      icon: SiMysql,
+      icon: SiMysql
     },
+
     {
-      text: 'JWT',
-      icon: SiJsonwebtokens,
-    },
+      text: 'Crypto',
+      icon: SiBitcoin
+    }
   ],
   other: [
     {
       text: 'Git',
-      icon: SiGit,
-    },
-    {
-      text: 'Vercel',
-      icon: SiVercel,
-    },
-    {
-      text: 'Electron',
-      icon: SiElectron,
-    },
-    {
-      text: 'Telegram bots',
-      icon: SiTelegram,
-    },
-    {
-      text: 'Mini app',
-      icon: SiTelegram,
+      icon: SiGit
     },
 
     {
-      text: 'Python',
-      icon: SiPython,
+      text: 'Eslint',
+      icon: SiEslint
     },
-  ],
+    {
+      text: 'Prettier',
+      icon: SiPrettier
+    },
+    {
+      text: 'Storybook',
+      icon: SiStorybook
+    },
+    {
+      text: 'Python',
+      icon: SiPython
+    }
+  ]
 }

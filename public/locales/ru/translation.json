@@ -25,6 +25,14 @@
         "backend": "Backend",
         "other": "Прочее"
       }
+    },
+    "portfolio": {
+      "title": "Портфолио",
+      "open-link": "Открыть",
+      "open-github": "Репозиторий",
+      "open-description": "Подробнее",
+      "close-description": "Скрыть",
+      "click-to-open": "Открыть полностью"
     }
   },
   "header": {

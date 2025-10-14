@@ -1,3 +1,4 @@
+import { FullImageModal } from '@/shared/ui/full-image-modal'
 import { Header } from '@/shared/ui/header'
 import { ScrollToTop } from '@/shared/ui/scroll-to-top'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
@@ -8,7 +9,7 @@ import { useEffect, useRef } from 'react'
 import { Outlet } from 'react-router-dom'
 
 export const AppLayout = observer(() => {
-  const { setScrollPosition, scrollPosition, setViewportRef } = scrollPositionStore
+  const { setScrollPosition, setViewportRef } = scrollPositionStore
 
   const viewport = useRef<HTMLDivElement>(null)
 
@@ -21,6 +22,7 @@ export const AppLayout = observer(() => {
       <Header />
       <Outlet />
       <ScrollToTop />
+      <FullImageModal />
     </ScrollArea>
   )
 })

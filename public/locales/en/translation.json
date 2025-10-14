@@ -23,6 +23,14 @@
         "backend": "Backend",
         "other": "Other"
       }
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "open-link": "Open",
+      "open-github": "Repository",
+      "open-description": "Show more",
+      "close-description": "Hide",
+      "click-to-open": "Open full"
     }
   },
   "header": {

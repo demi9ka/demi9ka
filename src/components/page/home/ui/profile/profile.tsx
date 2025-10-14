@@ -1,5 +1,4 @@
-import { AnimatedComponent } from '@/shared/ui/animated-component'
-import { Flex, Title, Box, Text, Blockquote } from '@mantine/core'
+import { Flex, Title, Box, Text, Blockquote, Badge } from '@mantine/core'
 import { Trans, useTranslation } from 'react-i18next'
 import { Image } from '@/shared/ui/image'
 import { CodeIcon } from 'lucide-react'
@@ -9,50 +8,46 @@ export const Profile = () => {
 
   return (
     <Flex
-      gap={16}
       direction={{
         base: 'column-reverse',
-        sm: 'row',
+        sm: 'row'
       }}
       align={{
         base: 'center',
-        sm: 'end',
+        sm: 'end'
       }}
     >
-      <Box>
-        <Flex
-          gap={8}
-          justify={{
-            base: 'center',
-            sm: 'start',
-          }}
-          align={'center'}
-        >
-          <Title mb={'xl'} order={2}>
+      <Box mt={{ base: 'xl', sm: 0 }}>
+        <Flex mb={{ base: 48, sm: 32 }} direction={'column'}>
+          <Title order={2} ta={{ base: 'center', sm: 'left' }}>
             {t('home.profile.name')}
           </Title>
+
+          <Badge
+            mx={{ base: 'auto', sm: 0 }}
+            fw={'unset'}
+            mt={{ base: 8, sm: 12 }}
+            fs={'italic'}
+            size='lg'
+            variant='light'
+          >
+            {t('home.profile.post')}
+          </Badge>
         </Flex>
 
-        <Title ta={{ base: 'center', sm: 'left' }} mb={32} order={3}>
-          {t('home.profile.post')}
-        </Title>
-
-        <AnimatedComponent animationType="slideUp" duration={1.2} delay={0.4} once={false} value={10}>
-          <Blockquote h={{ base: 'auto', sm: 256 }} color="violet.4" icon={<CodeIcon />} mt={16}>
-            <Text ta={'left'}>
-              <Trans
-                i18nKey={'home.profile.info'}
-                components={{
-                  span: <span style={{ color: 'var(--mantine-color-violet-3)' }} />,
-                }}
-              />
-            </Text>
-          </Blockquote>
-        </AnimatedComponent>
+        <Blockquote h={{ base: 'auto', sm: 256 }} color='violet.4' icon={<CodeIcon />} mt={16}>
+          <Text ta={'left'}>
+            <Trans
+              i18nKey={'home.profile.info'}
+              components={{
+                span: <span style={{ color: 'var(--mantine-color-violet-3)' }} />
+              }}
+            />
+          </Text>
+        </Blockquote>
       </Box>
-      <AnimatedComponent animationType="slideUp" duration={2} delay={0.4} once={false} value={10}>
-        <Image style={{ pointerEvents: 'none' }} w={256} h={256} src={'/avatar.webp'} />
-      </AnimatedComponent>
+
+      <Image style={{ pointerEvents: 'none' }} w={256} h={256} src={'/avatar.webp'} />
     </Flex>
   )
 }

@@ -5,14 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev-network": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.7.0",
+    "@mantine/carousel": "^8.2.7",
     "@mantine/core": "^8.2.4",
     "@mantine/hooks": "^8.2.4",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.12",
     "i18next": "^25.3.6",
     "i18next-http-backend": "^3.0.2",
