@@ -30,7 +30,17 @@
       "open-github": "Repository",
       "open-description": "Show more",
       "close-description": "Hide",
-      "click-to-open": "Open full"
+      "click-to-open": "Open full",
+      "projects": [
+        {
+          "title": "Vuscan.net",
+          "description": "Online scanning of Internet resources for vulnerabilities, SQL injections, CMS and security errors. The application has integrated a system for parsing open and closed systems, as well as the CtyproCloud payment system."
+        },
+        {
+          "title": "Bank.ir",
+          "description": "The client of the banking application on React Native. The program provides authorization by phone number and the possibility of transfer to other banking systems."
+        }
+      ]
     }
   },
   "footer": {
