@@ -39,6 +39,14 @@
         {
           "title": "Bank.ir",
           "description": "The client of the banking application on React Native. The program provides authorization by phone number and the possibility of transfer to other banking systems."
+        },
+        {
+          "title": "Quiz",
+          "description": "A service for automatic diagnosis of equipment malfunctions and registration of repair requests. The user selects the device, describes the problem, and the system makes a preliminary diagnosis and creates an order."
+        },
+        {
+          "title": "Spyq.net",
+          "description": "SpyQ.net — It is an intelligent B2B platform that helps businesses find target customers through the analysis of web resources. The service automatically crawls thousands of sites in selected niches, identifies relevant sites and places spot alerts on them with your commercial offer."
         }
       ]
     }

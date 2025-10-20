@@ -8,9 +8,9 @@ import { useTranslation } from 'react-i18next'
 import type { CardType } from '../../constants'
 import { useMemo } from 'react'
 
-type Props = { id: number } & CardType
+type Props = CardType
 
-export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, id }: Props) => {
+export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, localeId }: Props) => {
   const { t } = useTranslation()
 
   const openUrl = (url: string) => {
@@ -56,13 +56,13 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, i
           </CardComponent.Section>
           <Flex justify={'space-between'} py={'sm'} align={'center'}>
             <Text size={'lg'} fw={600}>
-              {t(`home.portfolio.projects.${id}.title`)}
+              {t(`home.portfolio.projects.${localeId}.title`)}
             </Text>
             <Group gap={8}>{mappedStackData}</Group>
           </Flex>
 
           <Text size='sm' c='dimmed'>
-            {t(`home.portfolio.projects.${id}.description`)}
+            {t(`home.portfolio.projects.${localeId}.description`)}
           </Text>
 
           <Flex gap={8} justify={'end'} align={'center'}>

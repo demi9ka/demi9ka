@@ -10,7 +10,7 @@ export const Portfolio = () => {
   const { t } = useTranslation()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
-  const mappedData = useMemo(() => DATA.map((el, i) => <Card key={i} {...el} id={i} />), [])
+  const mappedData = useMemo(() => DATA.map((el, i) => <Card key={i} {...el} />), [])
 
   return (
     <>
