@@ -1,13 +1,9 @@
 import {
-  SiElectron,
   SiEslint,
   SiExpress,
   SiGit,
-  SiHtml5,
-  SiJsonwebtokens,
   SiMobx,
   SiMysql,
-  SiNodedotjs,
   SiPostgresql,
   SiPrettier,
   SiPrisma,
@@ -17,21 +13,13 @@ import {
   SiSass,
   SiStorybook,
   SiTailwindcss,
-  SiTelegram,
   SiTypescript,
-  SiVercel,
-  SiVite,
   SiZod,
   SiNextdotjs,
-  type IconType,
   SiNestjs,
-  SiBitcoin,
-  SiPaytmHex,
-  SiPackagist,
-  SiCoda,
-  SiBlack,
   SiMantine,
-  SiShadcnui
+  SiShadcnui,
+  type IconType
 } from '@icons-pack/react-simple-icons'
 
 export type SkillItemType = { text: string; icon: IconType }
@@ -84,7 +72,7 @@ export const SKILLS: SkillsType = {
   ],
   backend: [
     {
-      text: 'Nest.js',
+      text: 'Nest js',
       icon: SiNestjs
     },
     {
@@ -102,11 +90,6 @@ export const SKILLS: SkillsType = {
     {
       text: 'Mysql',
       icon: SiMysql
-    },
-
-    {
-      text: 'Crypto',
-      icon: SiBitcoin
     }
   ],
   other: [

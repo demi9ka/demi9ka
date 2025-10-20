@@ -6,7 +6,7 @@
   "home": {
     "profile": {
       "name": "DEMID VETOSHKIN",
-      "post": "Frontend developer",
+      "post": "Web developer",
       "info": "👋 Hi, I'm Demid, I live in Kaliningrad and I'm in my 3rd year of bachelor's degree in engineering.<br><br>I have dozens of web development projects under my belt, from <b>Telegram Mini Apps</b> to complex <b>admin panels</b> and <b>sales funnels for the infobusiness</b>. I am engaged in both <span>frontend</span> and <span>backend</span> development, paying attention to every detail — from architecture design and requirements analysis to component implementation, API construction and performance fine-tuning."
     },
     "statistics": {
@@ -49,6 +49,9 @@
           "description": "SpyQ.net — It is an intelligent B2B platform that helps businesses find target customers through the analysis of web resources. The service automatically crawls thousands of sites in selected niches, identifies relevant sites and places spot alerts on them with your commercial offer."
         }
       ]
+    },
+    "contact": {
+      "title": "Contacts"
     }
   },
   "footer": {
@@ -56,7 +59,7 @@
     "main": "Main",
     "skills": "Skills",
     "portfolio": "Portfolio",
-    "contact": "Contact",
+    "contact": "Contacts",
     "copyrigth": "Demid. All rights reserved."
   }
 }

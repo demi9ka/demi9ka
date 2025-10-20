@@ -105,7 +105,7 @@ export const DATA: CardType[] = [
   {
     imgUrls: ['/bank-app-1.webp', '/bank-app-2.webp', '/bank-app-3.webp'],
     localeId: 1,
-    githubRepositoryUrl: 'https://github.com/demi9ka/vuscan',
+    githubRepositoryUrl: 'https://github.com/demi9ka/bank.ir',
     stackTechnology: [
       {
         Icon: SiReact,

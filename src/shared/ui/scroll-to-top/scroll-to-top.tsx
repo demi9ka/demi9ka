@@ -10,7 +10,7 @@ export const ScrollToTop = observer(() => {
     <ActionIcon
       size={'xl'}
       pos={'fixed'}
-      style={{ transition: '.2s ease-in-out' }}
+      style={{ transition: '.1s ease-in-out', zIndex: 5 }}
       bottom={20}
       right={scrollPosition.y > 10 ? 20 : -60}
       onClick={goToTop}
