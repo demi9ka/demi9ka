@@ -2,7 +2,6 @@ import { CodeIcon } from 'lucide-react'
 import css from './header.module.css'
 import { ActionIcon, Box, Flex } from '@mantine/core'
 import { LanguageSelect } from './ui/language-select'
-// import { ScrollProgress } from './ui/scroll-progress'
 import { AnimatedComponent } from '../animated-component'
 import { observer } from 'mobx-react-lite'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
@@ -24,14 +23,13 @@ export const Header = observer(() => {
   return (
     <Box className={combaneCSS(css.wrapper, isIslandHeader ? css.islandHeader : '')}>
       <Flex className={css.header}>
-        <AnimatedComponent animationType="slideRight" duration={0.5} delay={0.2} once={false} value={-10}>
-          <ActionIcon variant="filled" bg={`${iconColor}`} p={4} onClick={generateRandomColor} aria-label="icon">
+        <AnimatedComponent animationType='slideRight' duration={0.5} delay={0.2} once={false} value={-10}>
+          <ActionIcon variant='filled' bg={`${iconColor}`} p={4} onClick={generateRandomColor} aria-label='icon'>
             <CodeIcon strokeWidth={2.5} size={20} />
           </ActionIcon>
         </AnimatedComponent>
         <LanguageSelect />
       </Flex>
-      {/* <ScrollProgress /> */}
     </Box>
   )
 })

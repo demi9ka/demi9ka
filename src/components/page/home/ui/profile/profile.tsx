@@ -35,19 +35,26 @@ export const Profile = () => {
           </Badge>
         </Flex>
 
-        <Blockquote h={{ base: 'auto', sm: 256 }} color='violet.4' icon={<CodeIcon />} mt={16}>
-          <Text ta={'left'}>
+        <Blockquote h={{ base: 'auto', sm: 312 }} m={0} pl={30} py={22} color='violet.4' icon={<CodeIcon />}>
+          <Text ta={{ base: 'left', sm: 'left' }}>
             <Trans
               i18nKey={'home.profile.info'}
               components={{
-                span: <span style={{ color: 'var(--mantine-color-violet-3)' }} />
+                span: <span style={{ color: 'var(--mantine-color-violet-3)' }} />,
+                br: <br />,
+                b: <b />
               }}
             />
           </Text>
         </Blockquote>
       </Box>
 
-      <Image style={{ pointerEvents: 'none' }} w={256} h={256} src={'/avatar.webp'} />
+      <Image
+        style={{ pointerEvents: 'none' }}
+        w={{ base: 256, sm: 280 }}
+        h={{ base: 256, sm: 312 }}
+        src={'/avatar.webp'}
+      />
     </Flex>
   )
 }

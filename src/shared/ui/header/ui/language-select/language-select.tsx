@@ -1,11 +1,10 @@
 import { observer } from 'mobx-react-lite'
-// import css from './language-select.module.css'
 import { languageStore } from '@/store/language-store'
 import { Button, Flex } from '@mantine/core'
 
 const LANGUAGE_NAMES = {
   ru: 'Русский',
-  en: 'English',
+  en: 'English'
 }
 
 export const LanguageSelect = observer(() => {
@@ -17,7 +16,7 @@ export const LanguageSelect = observer(() => {
 
   return (
     <Flex align={'center'} gap={8}>
-      <Button size="xs" onClick={onChangeLanguage} variant={'subtle'}>
+      <Button size='xs' onClick={onChangeLanguage} variant={'subtle'}>
         {LANGUAGE_NAMES[language]}
       </Button>
     </Flex>
