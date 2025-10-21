@@ -21,6 +21,6 @@ export const CONTACT_DATA: ContactType[] = [
   },
   {
     Icon: SiGmail,
-    url: 'mailto:grazz1mwel@gmail.com'
+    url: 'mailto:grazz1wmel@gmail.com'
   }
 ]
