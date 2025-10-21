@@ -1,31 +1,33 @@
 <div id="header" align="center">
     <h1>👋Привет, я Демид</h1>
-    <h3>Frontend Developer</h3>
-    <h4>4 года опыта работы (1 год коммерческого опыта)</h4>
+    <h2>Web разработчик</h2>
+    <h3><a href="https://demi9ka.vercel.app">✨about ME✨</a></h3>
+    
 </div>
-<h3>🤝Контакты</h3>
-<div id="link">
-    <a href="https://t.me/demi9ka"><img width="35px" src="https://cdn.simpleicons.org/telegram"/></a>
+<h3>💬Контакты</h3>
+<div>
+    <a href="https://t.me/demi9ka"><img width="40px" src="https://cdn.simpleicons.org/telegram"/></a>
+    <a href="ttps://discord.com/users/812542562321039360"><img width="40px" src="https://cdn.simpleicons.org/discord"/></a>
+    <a href="mailto:grazz1wmel@gmail.com"><img width="40px" src="https://cdn.simpleicons.org/gmail"/></a>
 </div>
 
-<h3>🖥️ Мой стек технологий</h3>
-<div id="instrument">
-<img width="30px"  src="https://cdn.simpleicons.org/react">
-<img width="30px" src="https://cdn.simpleicons.org/express">
-<img width="30px" src="https://cdn.simpleicons.org/mongodb">
-<img width="30px" src="https://cdn.simpleicons.org/nodedotjs">
-<img width="30px" src="https://cdn.simpleicons.org/redux">
-<img width="30px" src="https://cdn.simpleicons.org/reactquery">
+<h3>💻Frontend</h3>
+
 <img width="30px" src="https://cdn.simpleicons.org/typescript">
-<img width="30px" src="https://cdn.simpleicons.org/python">
-<img width="30px" src="https://cdn.simpleicons.org/flask">
+<img width="30px"  src="https://cdn.simpleicons.org/nextdotjs">
+<img width="30px"  src="https://cdn.simpleicons.org/react">
+<img width="30px" src="https://cdn.simpleicons.org/reactquery">
+<img width="30px" src="https://cdn.simpleicons.org/mobx">
+
+<h3>🎨UI</h3>
+<img width="30px" src="https://cdn.simpleicons.org/tailwindcss">
+<img width="30px" src="https://cdn.simpleicons.org/mantine">
+<img width="30px" src="https://cdn.simpleicons.org/radixui">
+<img width="30px" src="https://cdn.simpleicons.org/SASS">
+
+<h3>⚙️Backend</h3>
+<img width="30px" src="https://cdn.simpleicons.org/nestjs">
+<img width="30px" src="https://cdn.simpleicons.org/express">
 <img width="30px" src="https://cdn.simpleicons.org/postgresql">
 <img width="30px" src="https://cdn.simpleicons.org/mysql">
-</div>
-
-<h3>🔧 Инструменты</h3>
-<div id="instrument">
-<img width="30px" src="https://cdn.simpleicons.org/git">
-<img width="30px" src="https://cdn.simpleicons.org/npm">
-<img width="30px" src="https://cdn.simpleicons.org/yarn">
-</div>
+<img width="30px" src="https://cdn.simpleicons.org/docker">
