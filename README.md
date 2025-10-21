@@ -7,7 +7,7 @@
 <h3>💬Контакты</h3>
 <div>
     <a href="https://t.me/demi9ka" target="_blank"><img width="40px" src="https://cdn.simpleicons.org/telegram"/></a>
-    <a href="ttps://discord.com/users/812542562321039360" target="_blank"><img width="40px" src="https://cdn.simpleicons.org/discord"/></a>
+    <a href="https://discord.com/users/812542562321039360" target="_blank"><img width="40px" src="https://cdn.simpleicons.org/discord"/></a>
     <a href="mailto:grazz1wmel@gmail.com"  target="_blank"><img width="40px" src="https://cdn.simpleicons.org/gmail"/></a>
 </div>
 
