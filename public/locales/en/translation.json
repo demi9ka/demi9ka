@@ -7,7 +7,7 @@
     "profile": {
       "name": "DEMID VETOSHKIN",
       "post": "Web developer",
-      "info": "👋 Hi, I'm Demid, I live in Kaliningrad and I'm in my 3rd year of bachelor's degree in engineering.<br><br>I have dozens of web development projects under my belt, from <b>Telegram Mini Apps</b> to complex <b>admin panels</b> and <b>sales funnels for the infobusiness</b>. I am engaged in both <span>frontend</span> and <span>backend</span> development, paying attention to every detail — from architecture design and requirements analysis to component implementation, API construction and performance fine-tuning."
+      "info": "👋 Hi, I'm Demid, I live in Kaliningrad and I'm in my 3rd year of bachelor's degree in engineering.<br><br>I have dozens of web development projects under my belt, from Telegram Mini Apps to complex admin panels and sales funnels for the infobusiness. I am engaged in both <frontendLink>frontend</frontendLink> and <backendLink>backend</backendLink> development, paying attention to every detail — from architecture design and requirements analysis to component implementation, API construction and performance fine-tuning."
     },
     "statistics": {
       "years-in-it_one": "Year in IT",
