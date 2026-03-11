@@ -47,6 +47,10 @@
         {
           "title": "Spyq.net",
           "description": "SpyQ.net — It is an intelligent B2B platform that helps businesses find target customers through the analysis of web resources. The service automatically crawls thousands of sites in selected niches, identifies relevant sites and places spot alerts on them with your commercial offer."
+        },
+        {
+          "title": "Hakuba.ai",
+          "description": "Hakuba.ai — an AI-powered platform for generating videos from static photos. Users upload an image, describe the desired animation, and the neural network creates dynamic video content in minutes. Features include Yandex OAuth and phone number authorization, payment gateway integration, and a feedback form."
         }
       ]
     },

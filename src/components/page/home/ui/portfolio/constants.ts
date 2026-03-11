@@ -1,4 +1,5 @@
 import {
+  SiDocker,
   SiExpress,
   SiMobx,
   SiMysql,
@@ -9,6 +10,7 @@ import {
   SiRadixui,
   SiReact,
   SiReactquery,
+  SiSass,
   SiStyledcomponents,
   SiTailwindcss,
   SiTelegram,
@@ -29,6 +31,49 @@ export type CardType = {
 }
 
 export const DATA: CardType[] = [
+  {
+    imgUrls: ['/hakuba-1.webp', '/hakuba-2.webp', '/hakuba-3.webp', '/hakuba-4.webp'],
+    localeId: 4,
+    siteUrl: 'https://hakuba.ai',
+    stackTechnology: [
+      {
+        Icon: SiTypescript,
+        name: 'TypeScript'
+      },
+      {
+        Icon: SiNextdotjs,
+        name: 'Next.js'
+      },
+      {
+        Icon: SiSass,
+        name: 'SCSS Modules'
+      },
+      {
+        Icon: SiRadixui,
+        name: 'Radix UI'
+      },
+      {
+        Icon: SiReactquery,
+        name: 'TanStack Query'
+      },
+      {
+        Icon: SiNestjs,
+        name: 'Nest.js'
+      },
+      {
+        Icon: SiPrisma,
+        name: 'Prisma ORM'
+      },
+      {
+        Icon: SiPostgresql,
+        name: 'PostgreSQL'
+      },
+      {
+        Icon: SiDocker,
+        name: 'Docker'
+      }
+    ]
+  },
   {
     imgUrls: ['/spyq-1.webp', '/spyq-2.webp', '/spyq-3.webp', '/spyq-4.webp', '/spyq-5.webp'],
     githubRepositoryUrl: 'https://github.com/demi9ka/spy-q',
