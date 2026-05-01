@@ -4,7 +4,7 @@ import { AnimatedComponent } from '@/shared/ui/animated-component'
 import { useTranslation } from 'react-i18next'
 
 const YEAR_IN_IT = new Date().getFullYear() - 2021
-const YEAR_WORK = new Date().getFullYear() - 2024
+const YEAR_WORK = new Date().getFullYear() - 2023
 const COMPLETED_PROJECTS = 10
 
 export const Statistics = () => {
@@ -23,7 +23,7 @@ export const Statistics = () => {
       </Grid.Col>
       <Grid.Col span={4}>
         <AnimatedComponent animationType="rotate" duration={1.2} delay={0.4} once={false} value={30}>
-          <FlexItem subTitle={t('home.statistics.years-work', { count: YEAR_WORK + 1 })} title={`${YEAR_WORK}.5+`} />
+          <FlexItem subTitle={t('home.statistics.years-work', { count: YEAR_WORK })} title={`${YEAR_WORK}+`} />
         </AnimatedComponent>
       </Grid.Col>
     </Grid>

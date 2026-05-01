@@ -39,7 +39,7 @@ export const AppLayout = observer(() => {
       h={'100svh'}
     >
       <Header />
-      <Container px={16} bg={'dark.7'} strategy='grid' mb={49} mt={64} pos={'relative'} style={{ zIndex: 2 }}>
+      <Container px={16} strategy='grid' mb={24} mt={64} pos={'relative'} style={{ zIndex: 2 }}>
         <Box maw={768} mb={12} mx={'auto'}>
           <Outlet />
         </Box>

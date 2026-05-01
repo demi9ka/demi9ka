@@ -17,7 +17,7 @@ export const ScrollToTop = observer(() => {
       bg={'white'}
       opacity={0.8}
     >
-      <ArrowUp color='var(--mantine-color-violet-text)' />
+      <ArrowUp color='var(--mantine-color-blue-text)' />
     </ActionIcon>
   )
 })

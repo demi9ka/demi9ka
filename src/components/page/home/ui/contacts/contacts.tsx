@@ -17,8 +17,8 @@ export const Contacts = () => {
         key={i}
         justify='center'
         py={10}
-        bg={'dark.6'}
-        style={{ cursor: 'pointer', border: '1px solid var(--mantine-color-dark-4)', borderRadius: 8 }}
+        bg={'gray.0'}
+        style={{ cursor: 'pointer', border: '1px solid var(--mantine-color-gray-3)', borderRadius: 8 }}
         onClick={() => onOpenLink(url)}
       >
         <Icon size={26} />
