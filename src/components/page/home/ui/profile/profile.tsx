@@ -2,11 +2,9 @@ import { Flex, Title, Box, Text, Blockquote, Badge, Button } from '@mantine/core
 import { Trans, useTranslation } from 'react-i18next'
 import { CodeIcon, Mail } from 'lucide-react'
 import { HashLink } from 'react-router-hash-link'
-import { skillsStore } from '@/store/skills-store'
 
 export const Profile = () => {
   const { t } = useTranslation()
-  const { setActiveTab } = skillsStore
 
   return (
     <Box>

@@ -1,4 +1,3 @@
-import { Footer } from '@/shared/ui/footer'
 import { Header } from '@/shared/ui/header'
 import { ScrollToTop } from '@/shared/ui/scroll-to-top'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
@@ -45,7 +44,6 @@ export const AppLayout = observer(() => {
         </Box>
       </Container>
       <ScrollToTop />
-      <Footer />
     </ScrollArea>
   )
 })
