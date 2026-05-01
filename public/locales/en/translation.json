@@ -7,7 +7,8 @@
     "profile": {
       "name": "DEMID VETOSHKIN",
       "post": "Middle Frontend Developer",
-      "info": "👋 Hi, I'm Demid — Frontend developer with 2+ years of freelance experience building scalable web applications.<br><br>Specializing in <frontendLink>React, Next.js</frontendLink> and TypeScript, with solid <backendLink>backend</backendLink> experience using NestJS, Prisma, and PostgreSQL. Delivered 10+ projects for international clients including SaaS dashboards, admin panels, and sales funnels. Open to remote contractor opportunities worldwide."
+      "info": "👋 Hi, I'm Demid — Frontend developer with 2+ years of freelance experience.<br><br>10+ projects for international clients: SaaS dashboards, admin panels, sales funnels. Stack: React, Next.js, TypeScript, NestJS, PostgreSQL.",
+      "cta": "Contact me"
     },
     "statistics": {
       "years-in-it_one": "Year in IT",

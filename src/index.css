@@ -13,6 +13,10 @@ a:visited {
   color: inherit; /* Цвет посещённых ссылок как у обычного текста */
 }
 
+a.mantine-Button-root:visited {
+  color: var(--mantine-color-white);
+}
+
 a:hover,
 a:active,
 a:focus {

@@ -6,7 +6,8 @@ import '@/feature/locale'
 
 const theme = createTheme({
   primaryColor: 'blue',
-  fontFamily: 'Inter, sans-serif',
+  defaultRadius: 'xl',
+  fontFamily: '"Geist Sans", sans-serif'
 })
 
 export const App = () => {
