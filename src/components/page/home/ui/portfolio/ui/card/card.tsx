@@ -7,11 +7,13 @@ import { Globe } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { CardType } from '../../constants'
 import { useMemo } from 'react'
+import { scrollPositionStore } from '@/store/scroll-postoion-store'
 
 type Props = CardType
 
 export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, localeId }: Props) => {
   const { t } = useTranslation()
+  const { viewportRef } = scrollPositionStore
 
   const openUrl = (url: string) => {
     window.open(url, '_blank')
@@ -19,7 +21,7 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
 
   const onOpenGithub = () => openUrl(githubRepositoryUrl ?? '')
   const onOpenWebSite = () => openUrl(siteUrl ?? '')
-  const onOpenImage = (imageUrl: string) => openUrl(window.location.href + imageUrl)
+  const onOpenImage = (imageUrl: string) => openUrl(imageUrl)
 
   const mappedStackData = useMemo(
     () =>
@@ -43,7 +45,7 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
 
   return (
     <Box style={{ breakInside: 'avoid' }} mb={{ base: 8, sm: 16 }}>
-      <AnimatedComponent animationType='slideUp' duration={0.8} delay={0.2} once={false} value={20}>
+      <AnimatedComponent animationType='slideUp' duration={0.8} delay={0.2} once={false} value={20} scrollRoot={viewportRef ?? undefined}>
         <CardComponent shadow='sm' p={'xs'} radius='md' withBorder>
           <CardComponent.Section>
             <Carousel

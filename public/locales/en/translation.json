@@ -58,13 +58,5 @@
     "contact": {
       "title": "Contacts"
     }
-  },
-  "footer": {
-    "title": "Navigation",
-    "main": "Main",
-    "skills": "Skills",
-    "portfolio": "Portfolio",
-    "contact": "Contacts",
-    "copyrigth": "Demid. All rights reserved."
   }
 }

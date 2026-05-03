@@ -1,10 +1,18 @@
 import { Flex, Title, Box, Text, Blockquote, Badge, Button } from '@mantine/core'
 import { Trans, useTranslation } from 'react-i18next'
 import { CodeIcon, Mail } from 'lucide-react'
-import { HashLink } from 'react-router-hash-link'
+import { scrollPositionStore } from '@/store/scroll-postoion-store'
 
 export const Profile = () => {
   const { t } = useTranslation()
+
+  const scrollToContact = () => {
+    const el = document.getElementById('contact')
+    if (!el || !scrollPositionStore.viewportRef?.current) return
+    const viewport = scrollPositionStore.viewportRef.current
+    const offsetTop = el.offsetTop
+    viewport.scrollTo({ top: offsetTop - 60, behavior: 'smooth' })
+  }
 
   return (
     <Box>
@@ -23,7 +31,7 @@ export const Profile = () => {
       </Blockquote>
 
       <Flex justify='center' mt={24}>
-        <Button component={HashLink} smooth to='/#contact' size='md' leftSection={<Mail size={16} />}>
+        <Button onClick={scrollToContact} size='md' leftSection={<Mail size={16} />}>
           {t('home.profile.cta')}
         </Button>
       </Flex>

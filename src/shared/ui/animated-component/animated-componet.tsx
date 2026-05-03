@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, type ReactNode } from 'react'
+import React, { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
 import { motion, useAnimation, type Variants } from 'framer-motion'
 
 type AnimationType = 'fade' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight' | 'zoom' | 'rotate'
@@ -12,6 +12,7 @@ interface AnimatedComponentProps {
   className?: string
   once?: boolean
   value?: number
+  scrollRoot?: RefObject<HTMLElement | null>
 }
 
 // Правильно типизированная функция создания вариантов анимации
@@ -71,12 +72,11 @@ const getAnimationVariants = (type: AnimationType, duration: number, delay: numb
   }
 }
 
-export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, animationType = 'fade', duration = 0.6, delay = 0, threshold = 0.1, className, once = true, value = 50 }) => {
+export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, animationType = 'fade', duration = 0.6, delay = 0, threshold = 0.1, className, once = true, value = 50, scrollRoot }) => {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
   const [hasAnimated, setHasAnimated] = useState(false)
 
-  // Получаем варианты с уже встроенными параметрами transition
   const variants = getAnimationVariants(animationType, duration, delay, value)
 
   useEffect(() => {
@@ -95,7 +95,7 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, 
         }
       },
       {
-        root: null,
+        root: scrollRoot?.current ?? null,
         rootMargin: '0px',
         threshold,
       }
@@ -106,7 +106,7 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, 
     return () => {
       observer.unobserve(element)
     }
-  }, [controls, threshold, once, hasAnimated])
+  }, [controls, threshold, once, hasAnimated, scrollRoot])
 
   return (
     <motion.div ref={ref} initial="hidden" animate={controls} variants={variants} className={className}>
