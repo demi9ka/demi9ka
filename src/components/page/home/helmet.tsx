@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Helmet as HelmetComponent } from 'react-helmet'
+import { Helmet as HelmetComponent } from 'react-helmet-async'
 
 export const Helmet = () => {
   const { t } = useTranslation()

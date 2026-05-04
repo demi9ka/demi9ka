@@ -10,6 +10,7 @@ interface AnimatedComponentProps {
   delay?: number
   threshold?: number
   className?: string
+  style?: React.CSSProperties
   once?: boolean
   value?: number
   scrollRoot?: RefObject<HTMLElement | null>
@@ -26,10 +27,12 @@ const getAnimationVariants = (type: AnimationType, duration: number, delay: numb
   const common = {
     visible: {
       opacity: 1,
+      pointerEvents: 'auto' as const,
       transition,
     },
     hidden: {
       opacity: 0,
+      pointerEvents: 'none' as const,
       transition,
     },
   }
@@ -72,7 +75,7 @@ const getAnimationVariants = (type: AnimationType, duration: number, delay: numb
   }
 }
 
-export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, animationType = 'fade', duration = 0.6, delay = 0, threshold = 0.1, className, once = true, value = 50, scrollRoot }) => {
+export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, animationType = 'fade', duration = 0.6, delay = 0, threshold = 0.1, className, style, once = true, value = 50, scrollRoot }) => {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -109,7 +112,7 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, 
   }, [controls, threshold, once, hasAnimated, scrollRoot])
 
   return (
-    <motion.div ref={ref} initial="hidden" animate={controls} variants={variants} className={className}>
+    <motion.div ref={ref} initial="hidden" animate={controls} variants={variants} className={className} style={style}>
       {children}
     </motion.div>
   )
