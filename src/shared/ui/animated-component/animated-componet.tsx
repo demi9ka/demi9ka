@@ -27,12 +27,10 @@ const getAnimationVariants = (type: AnimationType, duration: number, delay: numb
   const common = {
     visible: {
       opacity: 1,
-      pointerEvents: 'auto' as const,
       transition,
     },
     hidden: {
       opacity: 0,
-      pointerEvents: 'none' as const,
       transition,
     },
   }
