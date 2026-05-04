@@ -12,8 +12,6 @@ type Props = CardType
 export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, localeId }: Props) => {
   const { t } = useTranslation()
 
-  const onOpenImage = (imageUrl: string) => window.open(imageUrl, '_blank')
-
   const visibleStack = stackTechnology.slice(0, 5)
   const hiddenCount = stackTechnology.length - visibleStack.length
 
@@ -37,7 +35,9 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
     () =>
       imgUrls.map((el, i) => (
         <Carousel.Slide key={i}>
-          <Image onClick={() => onOpenImage(el)} src={el} alt={el} />
+          <a href={el} target='_blank' rel='noopener noreferrer' style={{ display: 'block' }}>
+            <Image src={el} alt={el} />
+          </a>
         </Carousel.Slide>
       )),
     []

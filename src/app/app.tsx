@@ -7,7 +7,7 @@ import '@/feature/locale'
 
 const theme = createTheme({
   primaryColor: 'blue',
-  defaultRadius: 'xl',
+  defaultRadius: 'md',
   fontFamily: '"Geist Sans", sans-serif'
 })
 

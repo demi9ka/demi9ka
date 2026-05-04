@@ -14,13 +14,8 @@ a:visited {
 }
 
 a.mantine-Button-root:visited,
-a.mantine-Button-root:visited *  {
-  color: inherit;
-}
-
-a.mantine-Button-root[data-variant="filled"]:visited,
-a.mantine-Button-root[data-variant="filled"]:visited * {
-  color: var(--mantine-color-white);
+a.mantine-Button-root:visited * {
+  color: var(--button-color, inherit);
 }
 
 a:hover,
