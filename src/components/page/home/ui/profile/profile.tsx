@@ -16,7 +16,7 @@ export const Profile = () => {
   }
 
   return (
-    <Box>
+    <Box style={{ overflowX: 'hidden' }}>
       <Flex justify='center' mb={{ base: 20, sm: 28 }}>
         <AnimatedComponent animationType='zoom' duration={0.6} delay={0.1} value={0.7}>
           <Avatar
