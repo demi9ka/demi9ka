@@ -12,13 +12,7 @@ type Props = CardType
 export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, localeId }: Props) => {
   const { t } = useTranslation()
 
-  const openUrl = (url: string) => {
-    window.open(url, '_blank')
-  }
-
-  const onOpenGithub = () => openUrl(githubRepositoryUrl ?? '')
-  const onOpenWebSite = () => openUrl(siteUrl ?? '')
-  const onOpenImage = (imageUrl: string) => openUrl(imageUrl)
+  const onOpenImage = (imageUrl: string) => window.open(imageUrl, '_blank')
 
   const visibleStack = stackTechnology.slice(0, 5)
   const hiddenCount = stackTechnology.length - visibleStack.length
@@ -76,7 +70,10 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
           <Flex gap={8} justify={'start'} align={'center'} mt={'md'}>
             {Boolean(githubRepositoryUrl) && (
               <Button
-                onClick={onOpenGithub}
+                component='a'
+                href={githubRepositoryUrl ?? ''}
+                target='_blank'
+                rel='noopener noreferrer'
                 rightSection={<SiGithub size={16} />}
                 size='xs'
                 variant='default'
@@ -85,7 +82,14 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
               </Button>
             )}
             {Boolean(siteUrl) && (
-              <Button onClick={onOpenWebSite} rightSection={<Globe size={16} />} size='xs'>
+              <Button
+                component='a'
+                href={siteUrl ?? ''}
+                target='_blank'
+                rel='noopener noreferrer'
+                rightSection={<Globe size={16} />}
+                size='xs'
+              >
                 {t('home.portfolio.open-link')}
               </Button>
             )}
