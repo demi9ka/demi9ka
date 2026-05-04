@@ -11,13 +11,12 @@ export const Home = () => {
     <Box>
       <Helmet />
       <Profile />
-      <Divider my={16} mt={48} />
-      <Statistics />
-      <Divider my={16} />
+      <Box my={40}><Statistics /></Box>
+      <Divider mb={40} />
       <Skills />
-      <Divider my={16} />
+      <Divider my={40} />
       <Contacts />
-      <Divider my={16} />
+      <Divider my={40} />
       <Portfolio />
     </Box>
   )

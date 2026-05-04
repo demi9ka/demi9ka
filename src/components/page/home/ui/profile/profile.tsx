@@ -1,6 +1,6 @@
 import { Flex, Title, Box, Text, Blockquote, Badge, Button } from '@mantine/core'
 import { Trans, useTranslation } from 'react-i18next'
-import { CodeIcon, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
 
 export const Profile = () => {
@@ -24,7 +24,7 @@ export const Profile = () => {
         </Badge>
       </Flex>
 
-      <Blockquote m={0} pl={30} py={22} color='blue.4' icon={<CodeIcon />}>
+      <Blockquote m={0} pl={30} py={22} color='blue.4' icon={null}>
         <Text>
           <Trans i18nKey={'home.profile.info'} />
         </Text>

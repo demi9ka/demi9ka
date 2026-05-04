@@ -23,13 +23,22 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
   const onOpenWebSite = () => openUrl(siteUrl ?? '')
   const onOpenImage = (imageUrl: string) => openUrl(imageUrl)
 
+  const visibleStack = stackTechnology.slice(0, 5)
+  const hiddenCount = stackTechnology.length - visibleStack.length
+
   const mappedStackData = useMemo(
-    () =>
-      stackTechnology.map(({ name, Icon }, i) => (
-        <Tooltip label={name} key={i}>
-          <Icon size={20} color='default' />
-        </Tooltip>
-      )),
+    () => (
+      <Group gap={6} wrap='nowrap'>
+        {visibleStack.map(({ name, Icon }, i) => (
+          <Tooltip label={name} key={i}>
+            <Icon size={18} color='default' />
+          </Tooltip>
+        ))}
+        {hiddenCount > 0 && (
+          <Text size='xs' c='dimmed'>+{hiddenCount}</Text>
+        )}
+      </Group>
+    ),
     []
   )
 
@@ -60,28 +69,26 @@ export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, l
             <Text size={'lg'} fw={600}>
               {t(`home.portfolio.projects.${localeId}.title`)}
             </Text>
-            <Group gap={8}>{mappedStackData}</Group>
+            {mappedStackData}
           </Flex>
 
           <Text size='sm' c='dimmed'>
             {t(`home.portfolio.projects.${localeId}.description`)}
           </Text>
 
-          <Flex gap={8} justify={'end'} align={'center'}>
+          <Flex gap={8} justify={'start'} align={'center'} mt={'md'}>
             {Boolean(githubRepositoryUrl) && (
               <Button
                 onClick={onOpenGithub}
                 rightSection={<SiGithub size={16} />}
                 size='xs'
-                c={'black'}
-                variant='white'
-                mt={'md'}
+                variant='default'
               >
                 {t('home.portfolio.open-github')}
               </Button>
             )}
             {Boolean(siteUrl) && (
-              <Button onClick={onOpenWebSite} rightSection={<Globe size={16} />} size='xs' mt='md'>
+              <Button onClick={onOpenWebSite} rightSection={<Globe size={16} />} size='xs'>
                 {t('home.portfolio.open-link')}
               </Button>
             )}
