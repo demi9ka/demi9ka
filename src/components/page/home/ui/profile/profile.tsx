@@ -1,8 +1,9 @@
-import { Flex, Title, Box, Text, Blockquote, Badge, Button, Avatar } from '@mantine/core'
 import { Trans, useTranslation } from 'react-i18next'
 import { Mail } from 'lucide-react'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
 import { AnimatedComponent } from '@/shared/ui/animated-component'
+import { Button } from '@/shared/ui/button'
+import { Badge } from '@/shared/ui/badge'
 
 export const Profile = () => {
   const { t } = useTranslation()
@@ -16,41 +17,44 @@ export const Profile = () => {
   }
 
   return (
-    <Box style={{ overflowX: 'hidden' }}>
-      <Flex justify='center' mb={{ base: 20, sm: 28 }}>
-        <AnimatedComponent animationType='zoom' duration={0.6} delay={0.1} value={0.7}>
-          <Avatar
+    <div className="overflow-x-hidden">
+      <div className="flex justify-center mb-5 sm:mb-7">
+        <AnimatedComponent animationType='zoom' duration={0.6} delay={0.1} value={0.85}>
+          <img
             src='/avatar.webp'
             alt={t('home.profile.name')}
-            radius='50%'
-            style={{ width: 'clamp(150px, 28vw, 240px)', height: 'clamp(150px, 28vw, 240px)' }}
+            className="rounded-full object-cover"
+            style={{ width: 'clamp(130px, 28vw, 220px)', height: 'clamp(130px, 28vw, 220px)' }}
           />
         </AnimatedComponent>
-      </Flex>
+      </div>
 
-      <Flex mb={{ base: 24, sm: 32 }} direction={'column'} align='center'>
-        <AnimatedComponent animationType='slideRight' duration={0.5} delay={0.2} value={-40}>
-          <Title order={2}>{t('home.profile.name')}</Title>
+      <div className="flex flex-col items-center mb-6 sm:mb-8">
+        <AnimatedComponent animationType='slideRight' duration={0.5} delay={0.2} value={30}>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            {t('home.profile.name')}
+          </h2>
         </AnimatedComponent>
 
-        <AnimatedComponent animationType='slideLeft' duration={0.5} delay={0.3} value={40}>
-          <Badge fw={'unset'} mt={{ base: 8, sm: 12 }} fs={'italic'} size='lg' variant='light'>
+        <AnimatedComponent animationType='slideLeft' duration={0.5} delay={0.3} value={30}>
+          <Badge variant="light" className="mt-2 sm:mt-3 text-sm italic font-normal">
             {t('home.profile.post')}
           </Badge>
         </AnimatedComponent>
-      </Flex>
+      </div>
 
-      <Blockquote m={0} pl={30} py={22} color='blue.4' icon={null}>
-        <Text>
+      <blockquote className="border-l-4 border-indigo-400 pl-6 py-4 text-muted-foreground leading-relaxed bg-indigo-50/50 rounded-r-lg">
+        <p className="text-sm sm:text-base">
           <Trans i18nKey={'home.profile.info'} />
-        </Text>
-      </Blockquote>
+        </p>
+      </blockquote>
 
-      <Flex justify='center' mt={24}>
-        <Button onClick={scrollToContact} size='md' leftSection={<Mail size={16} />}>
+      <div className="flex justify-center mt-6">
+        <Button onClick={scrollToContact} size="lg" className="gap-2">
+          <Mail size={16} />
           {t('home.profile.cta')}
         </Button>
-      </Flex>
-    </Box>
+      </div>
+    </div>
   )
 }

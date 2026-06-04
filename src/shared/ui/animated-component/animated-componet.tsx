@@ -16,64 +16,48 @@ interface AnimatedComponentProps {
   scrollRoot?: RefObject<HTMLElement | null>
 }
 
-// Правильно типизированная функция создания вариантов анимации
-const getAnimationVariants = (type: AnimationType, duration: number, delay: number, value: number): Variants & { value?: number } => {
+const getAnimationVariants = (type: AnimationType, duration: number, delay: number, value: number): Variants => {
   const transition = {
     duration,
     delay,
-    ease: [0.16, 1, 0.3, 1] as const,
+    ease: [0.22, 1, 0.36, 1] as const,
   }
 
-  const common = {
-    visible: {
-      opacity: 1,
-      transition,
-    },
-    hidden: {
-      opacity: 0,
-      transition,
-    },
-  }
+  const hidden = { opacity: 0, transition }
+  const visible = { opacity: 1, transition }
 
   switch (type) {
     case 'fade':
-      return common
+      return { visible, hidden }
     case 'slideUp':
-      return {
-        visible: { ...common.visible, y: 0 },
-        hidden: { ...common.hidden, y: value },
-      }
+      return { visible: { ...visible, y: 0 }, hidden: { ...hidden, y: value } }
     case 'slideDown':
-      return {
-        visible: { ...common.visible, y: 0 },
-        hidden: { ...common.hidden, y: value },
-      }
+      return { visible: { ...visible, y: 0 }, hidden: { ...hidden, y: -value } }
     case 'slideLeft':
-      return {
-        visible: { ...common.visible, x: 0 },
-        hidden: { ...common.hidden, x: value },
-      }
+      return { visible: { ...visible, x: 0 }, hidden: { ...hidden, x: value } }
     case 'slideRight':
-      return {
-        visible: { ...common.visible, x: 0 },
-        hidden: { ...common.hidden, x: value },
-      }
+      return { visible: { ...visible, x: 0 }, hidden: { ...hidden, x: -value } }
     case 'zoom':
-      return {
-        visible: { ...common.visible, scale: 1 },
-        hidden: { ...common.hidden, scale: value },
-      }
+      return { visible: { ...visible, scale: 1 }, hidden: { ...hidden, scale: value } }
     case 'rotate':
-      return {
-        visible: { ...common.visible, rotate: 0 },
-        hidden: { ...common.hidden, rotate: value },
-      }
+      return { visible: { ...visible, rotate: 0 }, hidden: { ...hidden, rotate: value } }
     default:
-      return common
+      return { visible, hidden }
   }
 }
 
-export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, animationType = 'fade', duration = 0.6, delay = 0, threshold = 0.1, className, style, once = true, value = 50, scrollRoot }) => {
+export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({
+  children,
+  animationType = 'fade',
+  duration = 0.6,
+  delay = 0,
+  threshold = 0.1,
+  className,
+  style,
+  once = true,
+  value = 24,
+  scrollRoot,
+}) => {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -88,9 +72,7 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, 
       ([entry]) => {
         if (entry.isIntersecting) {
           controls.start('visible')
-          if (once) {
-            setHasAnimated(true)
-          }
+          if (once) setHasAnimated(true)
         } else if (!once && !hasAnimated) {
           controls.start('hidden')
         }
@@ -103,10 +85,7 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, 
     )
 
     observer.observe(element)
-
-    return () => {
-      observer.unobserve(element)
-    }
+    return () => observer.unobserve(element)
   }, [controls, threshold, once, hasAnimated, scrollRoot])
 
   return (

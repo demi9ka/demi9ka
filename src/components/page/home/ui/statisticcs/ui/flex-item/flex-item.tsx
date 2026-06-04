@@ -1,5 +1,3 @@
-import { Title, Text, Flex } from '@mantine/core'
-
 type Props = {
   title: string
   subTitle: string
@@ -7,11 +5,9 @@ type Props = {
 
 export const FlexItem = ({ title, subTitle }: Props) => {
   return (
-    <Flex direction={'column'} gap={4} justify={'center'} align={'center'} py={16} px={8} bg='gray.0' h='100%' style={{ borderRadius: 8 }}>
-      <Title order={2} fz={{ base: 28, sm: 36 }} c='blue.6'>{title}</Title>
-      <Text ta='center' fz={{ base: 'xs', sm: 'sm' }} c='dimmed'>
-        {subTitle}
-      </Text>
-    </Flex>
+    <div className="flex flex-col gap-1 justify-center items-center py-4 px-2 bg-muted rounded-lg h-full">
+      <span className="text-2xl sm:text-4xl font-bold text-indigo-600 tabular-nums">{title}</span>
+      <span className="text-center text-xs sm:text-sm text-muted-foreground leading-tight">{subTitle}</span>
+    </div>
   )
 }

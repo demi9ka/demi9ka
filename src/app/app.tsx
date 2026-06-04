@@ -1,22 +1,16 @@
 import { RouterProvider } from 'react-router-dom'
-import { createTheme, MantineProvider } from '@mantine/core'
 import { HelmetProvider } from 'react-helmet-async'
 import { router } from './routing'
+import { TooltipProvider } from '@/shared/ui/tooltip'
 
 import '@/feature/locale'
-
-const theme = createTheme({
-  primaryColor: 'blue',
-  defaultRadius: 'md',
-  fontFamily: '"Geist Sans", sans-serif'
-})
 
 export const App = () => {
   return (
     <HelmetProvider>
-      <MantineProvider defaultColorScheme='light' theme={theme}>
+      <TooltipProvider>
         <RouterProvider router={router} />
-      </MantineProvider>
+      </TooltipProvider>
     </HelmetProvider>
   )
 }

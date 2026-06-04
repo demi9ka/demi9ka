@@ -1,6 +1,5 @@
 import { AnimatedComponent } from '@/shared/ui/animated-component'
 import type { IconType } from '@icons-pack/react-simple-icons'
-import { Flex, Grid, Text } from '@mantine/core'
 
 type Props = {
   Icon: IconType
@@ -10,20 +9,11 @@ type Props = {
 
 export const PanelItem = ({ Icon, text, delay }: Props) => {
   return (
-    <Grid.Col span={{ base: 6, sm: 3 }}>
-      <AnimatedComponent animationType='fade' duration={0.8} delay={delay || 0.2} once={false} value={10}>
-        <Flex
-          style={{ borderRadius: 4, border: '1px solid var(--mantine-color-gray-3)', height: 44 }}
-          py={8}
-          px={12}
-          bg={'gray.0'}
-          gap={16}
-          align={'center'}
-        >
-          <Icon color={'default'} size={20} style={{ flexShrink: 0 }} />
-          <Text size='sm' truncate='end'>{text}</Text>
-        </Flex>
-      </AnimatedComponent>
-    </Grid.Col>
+    <AnimatedComponent animationType='fade' duration={0.6} delay={delay ?? 0.2} once={false}>
+      <div className="flex items-center gap-3 h-11 px-3 py-2 bg-muted border border-border rounded-md hover:border-indigo-200 hover:bg-indigo-50/30 transition-colors duration-150">
+        <Icon color={'default'} size={18} className="shrink-0 text-foreground" />
+        <span className="text-sm text-foreground truncate">{text}</span>
+      </div>
+    </AnimatedComponent>
   )
 }

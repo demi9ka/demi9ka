@@ -1,26 +1,62 @@
-* {
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  user-select: none;
-}
-a {
-  text-decoration: none; /* Убираем подчёркивание */
-  color: inherit; /* Наследуем цвет текста */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 239 84% 67%;
+    --radius: 0.5rem;
+  }
 }
 
-a:visited {
-  color: inherit; /* Цвет посещённых ссылок как у обычного текста */
-}
+@layer base {
+  * {
+    @apply border-border;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    user-select: none;
+    box-sizing: border-box;
+  }
 
-a.mantine-Button-root:visited,
-a.mantine-Button-root:visited * {
-  color: var(--button-color, inherit);
-}
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist Sans', Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-a:hover,
-a:active,
-a:focus {
-  text-decoration: none; /* Убираем подчёркивание при взаимодействии */
-  color: inherit; /* Сохраняем цвет */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    text-decoration: none;
+    color: inherit;
+  }
 }

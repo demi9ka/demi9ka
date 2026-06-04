@@ -1,4 +1,3 @@
-import { Grid } from '@mantine/core'
 import { FlexItem } from './ui/flex-item'
 import { AnimatedComponent } from '@/shared/ui/animated-component'
 import { useTranslation } from 'react-i18next'
@@ -10,22 +9,16 @@ const COMPLETED_PROJECTS = 10
 export const Statistics = () => {
   const { t } = useTranslation()
   return (
-    <Grid gutter={4} align='stretch'>
-      <Grid.Col span={4} style={{ display: 'flex', flexDirection: 'column' }}>
-        <AnimatedComponent animationType="rotate" duration={1} delay={0.2} once={false} value={30} style={{ flex: 1 }}>
-          <FlexItem subTitle={t('home.statistics.years-in-it', { count: YEAR_IN_IT })} title={`${YEAR_IN_IT}+`} />
-        </AnimatedComponent>
-      </Grid.Col>
-      <Grid.Col span={4} style={{ display: 'flex', flexDirection: 'column' }}>
-        <AnimatedComponent animationType="rotate" duration={1} delay={0.3} once={false} value={30} style={{ flex: 1 }}>
-          <FlexItem subTitle={t('home.statistics.completed-projects')} title={`${COMPLETED_PROJECTS}+`} />
-        </AnimatedComponent>
-      </Grid.Col>
-      <Grid.Col span={4} style={{ display: 'flex', flexDirection: 'column' }}>
-        <AnimatedComponent animationType="rotate" duration={1.2} delay={0.4} once={false} value={30} style={{ flex: 1 }}>
-          <FlexItem subTitle={t('home.statistics.years-work', { count: YEAR_WORK })} title={`${YEAR_WORK}+`} />
-        </AnimatedComponent>
-      </Grid.Col>
-    </Grid>
+    <div className="grid grid-cols-3 gap-1">
+      <AnimatedComponent animationType="rotate" duration={1} delay={0.2} once={false} value={20} style={{ display: 'flex', flexDirection: 'column' }}>
+        <FlexItem subTitle={t('home.statistics.years-in-it', { count: YEAR_IN_IT })} title={`${YEAR_IN_IT}+`} />
+      </AnimatedComponent>
+      <AnimatedComponent animationType="rotate" duration={1} delay={0.3} once={false} value={20} style={{ display: 'flex', flexDirection: 'column' }}>
+        <FlexItem subTitle={t('home.statistics.completed-projects')} title={`${COMPLETED_PROJECTS}+`} />
+      </AnimatedComponent>
+      <AnimatedComponent animationType="rotate" duration={1.2} delay={0.4} once={false} value={20} style={{ display: 'flex', flexDirection: 'column' }}>
+        <FlexItem subTitle={t('home.statistics.years-work', { count: YEAR_WORK })} title={`${YEAR_WORK}+`} />
+      </AnimatedComponent>
+    </div>
   )
 }

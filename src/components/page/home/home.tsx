@@ -1,4 +1,3 @@
-import { Box, Divider } from '@mantine/core'
 import { Helmet } from './helmet'
 import { Profile } from './ui/profile'
 import { Statistics } from './ui/statisticcs'
@@ -8,16 +7,18 @@ import { Contacts } from './ui/contacts'
 
 export const Home = () => {
   return (
-    <Box>
+    <div>
       <Helmet />
       <Profile />
-      <Box my={40}><Statistics /></Box>
-      <Divider mb={40} />
+      <div className="my-10">
+        <Statistics />
+      </div>
+      <hr className="border-border mb-10" />
       <Skills />
-      <Divider my={40} />
+      <hr className="border-border my-10" />
       <Contacts />
-      <Divider my={40} />
+      <hr className="border-border my-10" />
       <Portfolio />
-    </Box>
+    </div>
   )
 }

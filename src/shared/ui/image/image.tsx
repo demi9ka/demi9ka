@@ -1,22 +1,32 @@
 import { useState } from 'react'
-import { Box, Image as ImageComponent, Skeleton, type ImageProps, type PolymorphicComponentProps } from '@mantine/core'
+import { Skeleton } from '@/shared/ui/skeleton'
+import { cn } from '@/shared/ui/lib/utils'
 
-export const Image = (props: PolymorphicComponentProps<'img', ImageProps>) => {
+type Props = React.ImgHTMLAttributes<HTMLImageElement> & {
+  w?: string | number
+  h?: string | number
+}
+
+export const Image = ({ src, alt, w, h, className, style, ...props }: Props) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const { w, h } = props
-
   return (
-    <Box w={w} h={h} style={{ position: 'relative' }}>
-      {!isLoaded && <Skeleton w={'100%'} h={'100%'} style={{ position: 'absolute', top: 0, left: 0 }} />}
-      <ImageComponent
-        style={{
-          opacity: isLoaded ? 1 : 0,
-          transition: 'opacity 0.3s ease-in-out',
-        }}
+    <div className="relative" style={{ width: w, height: h }}>
+      {!isLoaded && (
+        <Skeleton className="absolute inset-0 w-full h-full" />
+      )}
+      <img
+        src={src}
+        alt={alt}
         onLoad={() => setIsLoaded(true)}
+        className={cn(
+          'w-full h-auto transition-opacity duration-300',
+          isLoaded ? 'opacity-100' : 'opacity-0',
+          className
+        )}
+        style={style}
         {...props}
       />
-    </Box>
+    </div>
   )
 }
