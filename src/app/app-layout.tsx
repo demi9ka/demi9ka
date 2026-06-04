@@ -33,15 +33,23 @@ export const AppLayout = observer(() => {
   return (
     <div
       ref={viewport}
-      className="w-screen h-svh overflow-y-auto overflow-x-hidden relative"
-      style={{ scrollbarWidth: 'thin' }}
+      className="w-screen h-svh overflow-y-auto overflow-x-hidden relative grid-bg"
+      style={{ scrollbarWidth: 'thin', scrollbarColor: 'hsl(222 15% 13%) hsl(222 25% 5%)' }}
     >
+      {/* Radial glow top center */}
+      <div
+        className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] opacity-[0.12]"
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, #6366f1 0%, transparent 70%)' }}
+      />
+
       <Header />
-      <div className="pt-16 pb-6 px-4 relative z-10">
-        <div className="max-w-[768px] mx-auto mt-16 mb-3">
+
+      <div className="pt-14 px-4 pb-8 relative z-10">
+        <div className="max-w-[760px] mx-auto mt-12">
           <Outlet />
         </div>
       </div>
+
       <ScrollToTop />
     </div>
   )

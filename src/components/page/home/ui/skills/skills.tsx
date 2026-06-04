@@ -12,33 +12,27 @@ export const Skills = observer(() => {
   const { activeTab, setActiveTab } = skillsStore
 
   return (
-    <>
-      <SectionTitle title={t('home.skills.title')} id="skills" style={{ scrollMarginTop: 30 }} />
+    <div>
+      <SectionTitle title={t('home.skills.title')} id="skills" index="02" style={{ scrollMarginTop: 30 }} />
       <Tabs value={activeTab} onValueChange={v => setActiveTab(v as TabType)}>
         <TabsList>
           <TabsTrigger value="frontend">
-            <PaintBucket size={15} />
+            <PaintBucket size={12} />
             {t('home.skills.tabs.frontend')}
           </TabsTrigger>
           <TabsTrigger value="backend">
-            <Server size={15} />
+            <Server size={12} />
             {t('home.skills.tabs.backend')}
           </TabsTrigger>
           <TabsTrigger value="other">
-            <Ellipsis size={15} />
+            <Ellipsis size={12} />
             {t('home.skills.tabs.other')}
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="frontend">
-          <Panel data={SKILLS.frontend} />
-        </TabsContent>
-        <TabsContent value="backend">
-          <Panel data={SKILLS.backend} />
-        </TabsContent>
-        <TabsContent value="other">
-          <Panel data={SKILLS.other} />
-        </TabsContent>
+        <TabsContent value="frontend"><Panel data={SKILLS.frontend} /></TabsContent>
+        <TabsContent value="backend"><Panel data={SKILLS.backend} /></TabsContent>
+        <TabsContent value="other"><Panel data={SKILLS.other} /></TabsContent>
       </Tabs>
-    </>
+    </div>
   )
 })

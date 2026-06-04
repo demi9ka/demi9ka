@@ -10,14 +10,9 @@ export const Home = () => {
     <div>
       <Helmet />
       <Profile />
-      <div className="my-10">
-        <Statistics />
-      </div>
-      <hr className="border-border mb-10" />
+      <Statistics />
       <Skills />
-      <hr className="border-border my-10" />
       <Contacts />
-      <hr className="border-border my-10" />
       <Portfolio />
     </div>
   )

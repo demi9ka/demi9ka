@@ -5,14 +5,32 @@ type Props = {
   Icon: IconType
   text: string
   delay?: number
+  index: number
+  total: number
 }
 
-export const PanelItem = ({ Icon, text, delay }: Props) => {
+export const PanelItem = ({ Icon, text, delay, index, total }: Props) => {
+  const cols = 4
+  const isRightBorder = (index + 1) % cols !== 0 && index !== total - 1
+  const isBottomBorder = index < total - cols
+
   return (
-    <AnimatedComponent animationType='fade' duration={0.6} delay={delay ?? 0.2} once={false}>
-      <div className="flex items-center gap-3 h-11 px-3 py-2 bg-muted border border-border rounded-md hover:border-indigo-200 hover:bg-indigo-50/30 transition-colors duration-150">
-        <Icon color={'default'} size={18} className="shrink-0 text-foreground" />
-        <span className="text-sm text-foreground truncate">{text}</span>
+    <AnimatedComponent animationType='fade' duration={0.5} delay={delay ?? 0.1} once={false}>
+      <div
+        className={[
+          'group flex items-center gap-3 h-12 px-4 bg-[hsl(var(--card))] hover:bg-[hsl(var(--muted))] hover:border-indigo-500/40 transition-all duration-150 cursor-default',
+          isRightBorder ? 'border-r border-[hsl(var(--border))]' : '',
+          isBottomBorder ? 'border-b border-[hsl(var(--border))]' : '',
+        ].join(' ')}
+      >
+        <Icon
+          size={16}
+          color='default'
+          className="shrink-0 text-[hsl(var(--muted-foreground))] group-hover:text-indigo-400 transition-colors duration-150"
+        />
+        <span className="font-mono text-xs text-[hsl(var(--muted-foreground))] group-hover:text-[hsl(var(--foreground))] truncate tracking-wide transition-colors duration-150">
+          {text}
+        </span>
       </div>
     </AnimatedComponent>
   )

@@ -9,13 +9,15 @@ export const ScrollToTop = observer(() => {
   return (
     <button
       onClick={goToTop}
-      className={cn(
-        'fixed bottom-5 z-10 w-10 h-10 rounded-full bg-white border border-border shadow-md flex items-center justify-center transition-all duration-200 hover:bg-indigo-50 hover:border-indigo-300 cursor-pointer',
-        scrollPosition.y > 10 ? 'right-5 opacity-80' : '-right-16 opacity-0 pointer-events-none'
-      )}
       aria-label="Scroll to top"
+      className={cn(
+        'fixed bottom-5 z-10 w-9 h-9 border border-[hsl(var(--border))] bg-[hsl(var(--card))] flex items-center justify-center transition-all duration-300 hover:border-indigo-500/60 hover:text-indigo-400 hover:glow-indigo-sm cursor-pointer text-[hsl(var(--muted-foreground))]',
+        scrollPosition.y > 10
+          ? 'right-5 opacity-100'
+          : '-right-16 opacity-0 pointer-events-none'
+      )}
     >
-      <ArrowUp size={18} className="text-indigo-600" />
+      <ArrowUp size={14} />
     </button>
   )
 })

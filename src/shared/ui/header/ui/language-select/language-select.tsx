@@ -1,22 +1,17 @@
 import { observer } from 'mobx-react-lite'
 import { languageStore } from '@/store/language-store'
-import { Button } from '@/shared/ui/button'
 
-const LANGUAGE_NAMES = {
-  ru: 'Русский',
-  en: 'English'
-}
+const LANGUAGE_NAMES = { ru: 'RU', en: 'EN' }
 
 export const LanguageSelect = observer(() => {
   const { language, setLanguage } = languageStore
 
-  const onChangeLanguage = () => {
-    setLanguage(language === 'en' ? 'ru' : 'en')
-  }
-
   return (
-    <Button variant="subtle" size="sm" onClick={onChangeLanguage}>
+    <button
+      onClick={() => setLanguage(language === 'en' ? 'ru' : 'en')}
+      className="font-mono text-xs tracking-[0.2em] uppercase text-[hsl(var(--muted-foreground))] hover:text-indigo-400 transition-colors duration-150 cursor-pointer border border-[hsl(var(--border))] hover:border-indigo-500/50 px-3 py-1"
+    >
       {LANGUAGE_NAMES[language]}
-    </Button>
+    </button>
   )
 })

@@ -5,9 +5,16 @@ type Props = {
 
 export const FlexItem = ({ title, subTitle }: Props) => {
   return (
-    <div className="flex flex-col gap-1 justify-center items-center py-4 px-2 bg-muted rounded-lg h-full">
-      <span className="text-2xl sm:text-4xl font-bold text-indigo-600 tabular-nums">{title}</span>
-      <span className="text-center text-xs sm:text-sm text-muted-foreground leading-tight">{subTitle}</span>
+    <div className="flex flex-col items-center justify-center py-6 px-4 bg-[hsl(var(--card))] w-full group hover:bg-[hsl(var(--muted))] transition-colors duration-200">
+      <span
+        className="font-mono font-bold text-glow text-indigo-400 leading-none tabular-nums"
+        style={{ fontSize: 'clamp(1.8rem, 5vw, 2.8rem)' }}
+      >
+        {title}
+      </span>
+      <span className="font-mono text-[10px] tracking-widest uppercase text-[hsl(var(--muted-foreground))] mt-2 text-center">
+        {subTitle}
+      </span>
     </div>
   )
 }
