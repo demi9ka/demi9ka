@@ -18,12 +18,12 @@ export const Profile = () => {
       <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-start sm:items-center mb-8">
         {/* Avatar */}
         <AnimatedComponent animationType='zoom' duration={0.7} delay={0.1} value={0.9} className="shrink-0 self-center sm:self-start">
-          <div className="relative">
+          <div className="relative" style={{ padding: '8px' }}>
             {/* Decorative corner brackets */}
-            <div className="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-indigo-500" />
-            <div className="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-indigo-500" />
-            <div className="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-indigo-500" />
-            <div className="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-indigo-500" />
+            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-indigo-500" />
+            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-indigo-500" />
+            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-indigo-500" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-indigo-500" />
             <img
               src='/avatar.webp'
               alt={t('home.profile.name')}

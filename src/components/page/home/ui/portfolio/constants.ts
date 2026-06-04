@@ -32,6 +32,77 @@ export type CardType = {
 
 export const DATA: CardType[] = [
   {
+    imgUrls: ['/doctiff-1.webp', '/doctiff-2.webp', '/doctiff-3.webp', '/doctiff-4.webp'],
+    localeId: 5,
+    githubRepositoryUrl: 'https://github.com/demi9ka/doctiff',
+    stackTechnology: [
+      {
+        Icon: SiTypescript,
+        name: 'TypeScript'
+      },
+      {
+        Icon: SiNextdotjs,
+        name: 'Next.js'
+      },
+      {
+        Icon: SiMobx,
+        name: 'MobX'
+      },
+      {
+        Icon: SiTailwindcss,
+        name: 'Tailwind CSS'
+      },
+      {
+        Icon: SiNestjs,
+        name: 'Nest.js'
+      },
+      {
+        Icon: SiPrisma,
+        name: 'Prisma ORM'
+      },
+      {
+        Icon: SiPostgresql,
+        name: 'PostgreSQL'
+      }
+    ]
+  },
+  {
+    imgUrls: ['/enver-1.webp', '/enver-2.webp', '/enver-3.webp', '/enver-4.webp', '/enver-5.webp', '/enver-6.webp'],
+    localeId: 6,
+    siteUrl: 'https://enverai.ru',
+    githubRepositoryUrl: 'https://github.com/demi9ka/enver-ai',
+    stackTechnology: [
+      {
+        Icon: SiTypescript,
+        name: 'TypeScript'
+      },
+      {
+        Icon: SiNextdotjs,
+        name: 'Next.js'
+      },
+      {
+        Icon: SiMobx,
+        name: 'MobX'
+      },
+      {
+        Icon: SiTailwindcss,
+        name: 'Tailwind CSS'
+      },
+      {
+        Icon: SiRadixui,
+        name: 'Radix UI'
+      },
+      {
+        Icon: SiReactquery,
+        name: 'TanStack Query'
+      },
+      {
+        Icon: SiZod,
+        name: 'Zod'
+      }
+    ]
+  },
+  {
     imgUrls: ['/hakuba-1.webp', '/hakuba-2.webp', '/hakuba-3.webp', '/hakuba-4.webp'],
     localeId: 4,
     siteUrl: 'https://hakuba.ai',

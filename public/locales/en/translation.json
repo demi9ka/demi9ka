@@ -52,6 +52,14 @@
         {
           "title": "Hakuba.ai",
           "description": "Hakuba.ai — an AI-powered platform for generating videos from static photos. Users upload an image, describe the desired animation, and the neural network creates dynamic video content in minutes. Features include Yandex OAuth and phone number authorization, payment gateway integration, and a feedback form."
+        },
+        {
+          "title": "Doctiff",
+          "description": "A SaaS service for automatic generation of business documents: completion acts, invoices, and contracts. AI fills in templates based on a text description of the deal and auto-populates requisites from the user's profile."
+        },
+        {
+          "title": "EnverAI",
+          "description": "A SaaS platform for AI-powered image and video generation. Users describe a scene in text, select an AI provider, and receive the result in seconds. Features include subscription plans, generation history, user profile, and a support system."
         }
       ]
     },

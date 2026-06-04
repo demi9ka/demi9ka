@@ -1,4 +1,5 @@
 import { Header } from '@/shared/ui/header'
+import { Footer } from '@/shared/ui/footer'
 import { ScrollToTop } from '@/shared/ui/scroll-to-top'
 import { scrollPositionStore } from '@/store/scroll-postoion-store'
 import { useThrottle } from '@uidotdev/usehooks'
@@ -44,12 +45,13 @@ export const AppLayout = observer(() => {
 
       <Header />
 
-      <div className="pt-14 px-4 pb-8 relative z-10">
+      <div className="pt-14 px-4 relative z-10">
         <div className="max-w-[760px] mx-auto mt-12">
           <Outlet />
         </div>
       </div>
 
+      <Footer />
       <ScrollToTop />
     </div>
   )
