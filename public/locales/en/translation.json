@@ -6,9 +6,10 @@
   "home": {
     "profile": {
       "name": "Demid Vetoshkin",
-      "post": "Middle Frontend Developer",
-      "info": "👋 Hi, I'm Demid — Frontend developer with 2+ years of freelance experience.<br><br>10+ projects for international clients: SaaS dashboards, admin panels, sales funnels. Stack: React, Next.js, TypeScript, NestJS, PostgreSQL.",
-      "cta": "Contact me"
+      "post": "Engineer · Web Developer",
+      "info": "Engineer and web developer. I've been writing code for a few years now, used to taking projects all the way and owning the result. I care about clean code and interfaces that are genuinely nice to use. Mostly React, Next.js, TypeScript and NestJS.",
+      "cta": "Get in touch",
+      "available": "Available for work"
     },
     "statistics": {
       "years-in-it_one": "Year in IT",
@@ -26,7 +27,8 @@
       }
     },
     "portfolio": {
-      "title": "Portfolio",
+      "title": "Selected work",
+      "label": "projects",
       "open-link": "Open",
       "open-github": "Repository",
       "open-description": "Show more",
@@ -55,16 +57,18 @@
         },
         {
           "title": "Doctiff",
-          "description": "A SaaS service for automatic generation of business documents: completion acts, invoices, and contracts. AI fills in templates based on a text description of the deal and auto-populates requisites from the user's profile."
+          "description": "A service for automatic generation of business documents: completion acts, invoices, and contracts. AI fills in templates based on a text description of the deal and auto-populates requisites from the user's profile."
         },
         {
           "title": "EnverAI",
-          "description": "A SaaS platform for AI-powered image and video generation. Users describe a scene in text, select an AI provider, and receive the result in seconds. Features include subscription plans, generation history, user profile, and a support system."
+          "description": "A platform for AI-powered image and video generation. Users describe a scene in text, select an AI provider, and receive the result in seconds. Features include subscription plans, generation history, user profile, and a support system."
         }
       ]
     },
     "contact": {
-      "title": "Contacts"
+      "title": "Let's collaborate",
+      "label": "contact",
+      "subtitle": "Have a project in mind or just want to say hi? My inbox is always open."
     }
   }
 }

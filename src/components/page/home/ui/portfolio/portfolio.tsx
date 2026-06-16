@@ -1,39 +1,32 @@
-import { SectionTitle } from '@/shared/ui/section-title'
+import { Container } from '@/shared/ui/container'
 import { useTranslation } from 'react-i18next'
 import { DATA } from './constants'
 import { Card } from './ui/card'
-import { useState, useEffect } from 'react'
 
 export const Portfolio = () => {
   const { t } = useTranslation()
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640)
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 640)
-    window.addEventListener('resize', handleResize, { passive: true })
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const left = DATA.filter((_, i) => i % 2 === 0)
-  const right = DATA.filter((_, i) => i % 2 === 1)
 
   return (
-    <div className="pb-8">
-      <SectionTitle title={t('home.portfolio.title')} index="04" />
-      {isMobile ? (
-        <div className="flex flex-col gap-3">
-          {DATA.map((el, i) => <Card key={i} {...el} cardIndex={i} />)}
-        </div>
-      ) : (
-        <div className="flex gap-3 items-start">
-          <div className="flex-1 flex flex-col gap-3">
-            {left.map((el, i) => <Card key={i * 2} {...el} cardIndex={i * 2} />)}
+    <section className="py-20 sm:py-24">
+      <Container size="wide">
+        <div className="mb-12 flex items-end justify-between gap-4 border-b border-[hsl(var(--border))] pb-6">
+          <div>
+            <div className="mb-2 font-mono text-xs text-[hsl(var(--muted-foreground))]">01 / work</div>
+            <h2 className="text-3xl font-semibold tracking-tight text-[hsl(var(--foreground))] sm:text-4xl">
+              {t('home.portfolio.title')}
+            </h2>
           </div>
-          <div className="flex-1 flex flex-col gap-3">
-            {right.map((el, i) => <Card key={i * 2 + 1} {...el} cardIndex={i * 2 + 1} />)}
-          </div>
+          <span className="shrink-0 pb-1 font-mono text-xs text-[hsl(var(--muted-foreground))]">
+            {DATA.length} {t('home.portfolio.label')}
+          </span>
         </div>
-      )}
-    </div>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {DATA.map((el, i) => (
+            <Card key={i} {...el} cardIndex={i} />
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }

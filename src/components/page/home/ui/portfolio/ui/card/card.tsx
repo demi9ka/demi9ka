@@ -1,134 +1,57 @@
 import { Image } from '@/shared/ui/image'
 import { AnimatedComponent } from '@/shared/ui/animated-component'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/shared/ui/tooltip'
-import { SiGithub } from '@icons-pack/react-simple-icons'
-import { Globe, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Carousel } from '@/shared/ui/carousel'
 import { useTranslation } from 'react-i18next'
 import type { CardType } from '../../constants'
-import { useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import { ProjectLinks } from './ui/project-links'
 
 type Props = CardType & { cardIndex: number }
 
 export const Card = ({ githubRepositoryUrl, imgUrls, stackTechnology, siteUrl, localeId, cardIndex }: Props) => {
   const { t } = useTranslation()
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
-  const [canScrollPrev, setCanScrollPrev] = useState(false)
-  const [canScrollNext, setCanScrollNext] = useState(true)
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setCanScrollPrev(emblaApi.canScrollPrev())
-    setCanScrollNext(emblaApi.canScrollNext())
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    emblaApi.on('select', onSelect)
-    onSelect()
-  }, [emblaApi, onSelect])
-
-  const visibleStack = stackTechnology.slice(0, 5)
-  const hiddenCount = stackTechnology.length - visibleStack.length
+  const stack = stackTechnology.map(s => s.name).join('  ·  ')
 
   return (
-    <AnimatedComponent animationType='slideUp' duration={0.6} delay={0.05 * (cardIndex % 4)} once={true} value={16}>
-      <div className="group border border-[hsl(var(--border))] bg-[hsl(var(--card))] hover:border-indigo-500/40 transition-all duration-200 overflow-hidden relative">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 w-0 h-[1px] bg-indigo-500 group-hover:w-full transition-all duration-500 z-10" />
-
-        {/* Card number */}
-        <div className="absolute top-2 left-2 z-20 font-mono text-[10px] text-indigo-400/60 tracking-wider">
-          {String(cardIndex + 1).padStart(2, '0')}
-        </div>
-
-        {/* Carousel */}
-        <div className="relative overflow-hidden" ref={emblaRef}>
-          <div className="flex">
+    <AnimatedComponent animationType="slideUp" duration={0.6} delay={0.05 * (cardIndex % 4)} once value={20} className="h-full">
+      <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] transition-colors duration-200 hover:border-[hsl(0_0%_28%)]">
+        {/* Media */}
+        <div className="relative border-b border-[hsl(var(--border))]">
+          <Carousel className="rounded-t-xl">
             {imgUrls.map((el, i) => (
-              <div key={i} className="flex-none w-full">
-                <a href={el} target='_blank' rel='noopener noreferrer' className="block">
-                  <Image src={el} alt={`project-${localeId}-${i}`} className="w-full" />
-                </a>
-              </div>
+              <a key={i} href={el} target="_blank" rel="noopener noreferrer" className="block aspect-[16/10]">
+                <Image
+                  src={el}
+                  w="100%"
+                  h="100%"
+                  alt={`project-${localeId}-${i}`}
+                  className="h-full object-cover object-top"
+                />
+              </a>
             ))}
-          </div>
+          </Carousel>
 
-          {/* Gradient overlay bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[hsl(var(--card))] to-transparent pointer-events-none" />
-
-          {imgUrls.length > 1 && (
-            <>
-              <button
-                onClick={() => emblaApi?.scrollPrev()}
-                disabled={!canScrollPrev}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 border border-[hsl(var(--border))] bg-[hsl(var(--background))]/80 flex items-center justify-center hover:border-indigo-500/50 hover:text-indigo-400 transition-all cursor-pointer text-[hsl(var(--muted-foreground))]"
-                aria-label="Previous"
-              >
-                <ChevronLeft size={13} />
-              </button>
-              <button
-                onClick={() => emblaApi?.scrollNext()}
-                disabled={!canScrollNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 border border-[hsl(var(--border))] bg-[hsl(var(--background))]/80 flex items-center justify-center hover:border-indigo-500/50 hover:text-indigo-400 transition-all cursor-pointer text-[hsl(var(--muted-foreground))]"
-                aria-label="Next"
-              >
-                <ChevronRight size={13} />
-              </button>
-            </>
-          )}
+          {/* Index badge */}
+          <span className="pointer-events-none absolute left-3 top-3 z-10 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))]/80 px-1.5 py-0.5 font-mono text-[11px] text-[hsl(var(--foreground))] backdrop-blur">
+            {String(cardIndex + 1).padStart(2, '0')}
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="px-4 pt-3 pb-4">
-          <div className="flex items-start justify-between gap-2 mb-2">
-            <span className="font-semibold text-[hsl(var(--foreground))] leading-snug">
+        {/* Body */}
+        <div className="flex flex-1 flex-col p-5">
+          <div className="flex items-start justify-between gap-3">
+            <h3 className="text-lg font-semibold leading-snug tracking-tight text-[hsl(var(--foreground))]">
               {t(`home.portfolio.projects.${localeId}.title`)}
-            </span>
-            <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
-              {visibleStack.map(({ name, Icon }, i) => (
-                <Tooltip key={i}>
-                  <TooltipTrigger asChild>
-                    <span className="cursor-default text-[hsl(var(--muted-foreground))] hover:text-indigo-400 transition-colors">
-                      <Icon size={14} color='default' />
-                    </span>
-                  </TooltipTrigger>
-                  <TooltipContent>{name}</TooltipContent>
-                </Tooltip>
-              ))}
-              {hiddenCount > 0 && (
-                <span className="font-mono text-[10px] text-[hsl(var(--muted-foreground))]">+{hiddenCount}</span>
-              )}
-            </div>
+            </h3>
+            <ProjectLinks githubRepositoryUrl={githubRepositoryUrl} siteUrl={siteUrl} />
           </div>
 
-          <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed mb-4">
+          <p className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
             {t(`home.portfolio.projects.${localeId}.description`)}
           </p>
 
-          <div className="flex gap-2">
-            {Boolean(githubRepositoryUrl) && (
-              <a
-                href={githubRepositoryUrl ?? ''}
-                target='_blank'
-                rel='noopener noreferrer'
-                className="flex items-center gap-1.5 border border-[hsl(var(--border))] px-3 py-1.5 text-xs font-mono text-[hsl(var(--muted-foreground))] hover:border-indigo-500/50 hover:text-indigo-400 transition-all duration-150 uppercase tracking-wider"
-              >
-                <SiGithub size={11} />
-                {t('home.portfolio.open-github')}
-              </a>
-            )}
-            {Boolean(siteUrl) && (
-              <a
-                href={siteUrl ?? ''}
-                target='_blank'
-                rel='noopener noreferrer'
-                className="flex items-center gap-1.5 border border-indigo-500/50 bg-indigo-600/10 px-3 py-1.5 text-xs font-mono text-indigo-400 hover:bg-indigo-600/20 hover:border-indigo-400 transition-all duration-150 uppercase tracking-wider"
-              >
-                <Globe size={11} />
-                {t('home.portfolio.open-link')}
-              </a>
-            )}
+          <div className="mt-auto border-t border-[hsl(var(--border))] pt-3.5 font-mono text-[11px] leading-relaxed tracking-wide text-[hsl(0_0%_42%)]">
+            <span className="line-clamp-2">{stack}</span>
           </div>
         </div>
       </div>

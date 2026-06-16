@@ -5,9 +5,9 @@ type Props = { data: SkillItemType[] }
 
 export const Panel = ({ data }: Props) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 border border-t-0 border-[hsl(var(--border))] divide-[hsl(var(--border))]" style={{ gridAutoRows: '1fr' }}>
+    <div className="flex flex-wrap gap-2.5">
       {data.map(({ icon, text }, i) => (
-        <PanelItem key={i} Icon={icon} text={text} delay={(i + 1) / 60} index={i} total={data.length} />
+        <PanelItem key={i} Icon={icon} text={text} delay={(i + 1) / 60} />
       ))}
     </div>
   )

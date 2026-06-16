@@ -11,7 +11,7 @@ export const ScrollToTop = observer(() => {
       onClick={goToTop}
       aria-label="Scroll to top"
       className={cn(
-        'fixed bottom-5 z-10 w-9 h-9 border border-[hsl(var(--border))] bg-[hsl(var(--card))] flex items-center justify-center transition-all duration-300 hover:border-indigo-500/60 hover:text-indigo-400 hover:glow-indigo-sm cursor-pointer text-[hsl(var(--muted-foreground))]',
+        'fixed bottom-5 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--muted-foreground))] transition-all duration-300 hover:border-[hsl(0_0%_32%)] hover:text-[hsl(var(--foreground))]',
         scrollPosition.y > 10
           ? 'right-5 opacity-100'
           : '-right-16 opacity-0 pointer-events-none'

@@ -3,27 +3,23 @@ import { cn } from '@/shared/ui/lib/utils'
 type Props = {
   title: string
   id?: string
-  index?: string
+  /** small muted label shown above the title, e.g. "01 / work" */
+  label?: string
   className?: string
   style?: React.CSSProperties
 }
 
-export const SectionTitle = ({ title, id, index, className, style }: Props) => {
+export const SectionTitle = ({ title, id, label, className, style }: Props) => {
   return (
-    <div
-      id={id}
-      style={style}
-      className={cn('flex items-center gap-4 mt-14 mb-5', className)}
-    >
-      {index && (
-        <span className="font-mono text-xs text-indigo-500/70 tracking-widest shrink-0">
-          {index}
-        </span>
+    <div id={id} style={style} className={cn('mb-8', className)}>
+      {label && (
+        <div className="mb-2 font-mono text-xs tracking-tight text-[hsl(var(--muted-foreground))]">
+          {label}
+        </div>
       )}
-      <span className="text-xs font-mono tracking-[0.2em] uppercase text-[hsl(var(--muted-foreground))]">
+      <h2 className="text-2xl font-semibold tracking-tight text-[hsl(var(--foreground))] sm:text-3xl">
         {title}
-      </span>
-      <div className="flex-1 h-px bg-[hsl(var(--border))]" />
+      </h2>
     </div>
   )
 }

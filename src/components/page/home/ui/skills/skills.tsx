@@ -1,38 +1,43 @@
 import { SectionTitle } from '@/shared/ui/section-title'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/shared/ui/tabs'
-import { Ellipsis, PaintBucket, Server } from 'lucide-react'
+import { Container } from '@/shared/ui/container'
+import { AnimatedComponent } from '@/shared/ui/animated-component'
 import { useTranslation } from 'react-i18next'
 import { Panel } from './ui/panel'
 import { SKILLS } from './constants'
-import { observer } from 'mobx-react-lite'
-import { skillsStore, type TabType } from '@/store/skills-store'
 
-export const Skills = observer(() => {
+const ROWS = [
+  { key: 'frontend', data: SKILLS.frontend },
+  { key: 'backend', data: SKILLS.backend },
+  { key: 'other', data: SKILLS.other },
+] as const
+
+export const Skills = () => {
   const { t } = useTranslation()
-  const { activeTab, setActiveTab } = skillsStore
 
   return (
-    <div>
-      <SectionTitle title={t('home.skills.title')} id="skills" index="02" style={{ scrollMarginTop: 30 }} />
-      <Tabs value={activeTab} onValueChange={v => setActiveTab(v as TabType)}>
-        <TabsList>
-          <TabsTrigger value="frontend">
-            <PaintBucket size={12} />
-            {t('home.skills.tabs.frontend')}
-          </TabsTrigger>
-          <TabsTrigger value="backend">
-            <Server size={12} />
-            {t('home.skills.tabs.backend')}
-          </TabsTrigger>
-          <TabsTrigger value="other">
-            <Ellipsis size={12} />
-            {t('home.skills.tabs.other')}
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="frontend"><Panel data={SKILLS.frontend} /></TabsContent>
-        <TabsContent value="backend"><Panel data={SKILLS.backend} /></TabsContent>
-        <TabsContent value="other"><Panel data={SKILLS.other} /></TabsContent>
-      </Tabs>
-    </div>
+    <section id="skills" className="border-t border-[hsl(var(--border))] py-20 sm:py-24" style={{ scrollMarginTop: 60 }}>
+      <Container>
+        <SectionTitle title={t('home.skills.title')} label="02 / stack" />
+        <div className="border-t border-[hsl(var(--border))]">
+          {ROWS.map(({ key, data }, i) => (
+            <AnimatedComponent key={key} animationType="slideUp" duration={0.5} delay={i * 0.08} once value={12}>
+              <div className="flex flex-col gap-4 border-b border-[hsl(var(--border))] py-7 sm:flex-row sm:gap-10">
+                <div className="flex shrink-0 items-baseline gap-2 sm:w-40 sm:flex-col sm:items-start sm:gap-1">
+                  <span className="text-sm font-medium text-[hsl(var(--foreground))]">
+                    {t(`home.skills.tabs.${key}`)}
+                  </span>
+                  <span className="font-mono text-xs text-[hsl(var(--muted-foreground))]">
+                    {String(data.length).padStart(2, '0')}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <Panel data={data} />
+                </div>
+              </div>
+            </AnimatedComponent>
+          ))}
+        </div>
+      </Container>
+    </section>
   )
-})
+}

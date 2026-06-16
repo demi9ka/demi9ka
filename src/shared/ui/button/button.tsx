@@ -4,22 +4,22 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '../lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-200 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-40 cursor-pointer uppercase tracking-wider',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors duration-150 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-40 cursor-pointer',
   {
     variants: {
       variant: {
-        default: 'bg-indigo-600 text-white border border-indigo-500 hover:bg-indigo-500 hover:glow-indigo-sm active:scale-[0.97]',
-        secondary: 'bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] border border-[hsl(var(--border))] hover:border-indigo-500/50',
+        default: 'bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(0_0%_88%)]',
+        secondary: 'bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] border border-[hsl(var(--border))] hover:bg-[hsl(var(--accent))]',
         ghost: 'text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]',
-        outline: 'border border-[hsl(var(--border))] bg-transparent text-[hsl(var(--foreground))] hover:border-indigo-500/60 hover:text-indigo-400',
+        outline: 'border border-[hsl(var(--border))] bg-transparent text-[hsl(var(--foreground))] hover:border-[hsl(0_0%_32%)] hover:bg-[hsl(var(--secondary))]',
         subtle: 'text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]',
-        link: 'text-indigo-400 underline-offset-4 hover:underline',
+        link: 'text-[hsl(var(--foreground))] underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-9 px-4 py-2',
-        sm: 'h-7 px-3 text-xs',
+        default: 'h-10 px-5 py-2',
+        sm: 'h-8 px-3 text-xs',
         lg: 'h-11 px-7 text-sm',
-        icon: 'h-9 w-9',
+        icon: 'h-10 w-10',
       },
     },
     defaultVariants: {

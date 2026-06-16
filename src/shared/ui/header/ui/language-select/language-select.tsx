@@ -9,7 +9,7 @@ export const LanguageSelect = observer(() => {
   return (
     <button
       onClick={() => setLanguage(language === 'en' ? 'ru' : 'en')}
-      className="font-mono text-xs tracking-[0.2em] uppercase text-[hsl(var(--muted-foreground))] hover:text-indigo-400 transition-colors duration-150 cursor-pointer border border-[hsl(var(--border))] hover:border-indigo-500/50 px-3 py-1"
+      className="cursor-pointer rounded-md border border-[hsl(var(--border))] px-2.5 py-1 font-mono text-xs text-[hsl(var(--muted-foreground))] transition-colors duration-150 hover:border-[hsl(0_0%_32%)] hover:text-[hsl(var(--foreground))]"
     >
       {LANGUAGE_NAMES[language]}
     </button>
